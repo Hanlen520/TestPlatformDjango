@@ -1,0 +1,9 @@
+ [ERROR] 2020-11-10 19:12:38,930 [Thread-1:49396] [interface:122] [views:test_failed] - error-1
+ [ERROR] 2020-11-10 19:17:16,464 [Thread-1:50728] [views:test_failed] - error-1
+ [ERROR] 2020-11-10 19:19:23,759 [Thread-1:22456] [views.py:122] [views:test_failed] - error-1
+ [ERROR] 2020-11-10 22:06:46,681 [Thread-1:51808] [views.py:122] [views:test_failed] - error-1
+ [ERROR] 2020-11-12 15:02:40,227 [Thread-1:98936] [interface:61] [users_views:post] - {"username": [{"message": "\u7528\u6237\u540d\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}], "password": [{"message": "\u5bc6\u7801\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}]}
+ [ERROR] 2020-11-13 13:23:19,115 [Thread-4:121804] [interface:34] [users_views:get] - {"username": [{"message": "\u7528\u6237\u540d\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}], "password": [{"message": "\u5bc6\u7801\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}]}
+ [ERROR] 2020-12-08 17:33:20,299 [Thread-3:104188] [interface:34] [users_views:get] - {"username": [{"message": "\u7528\u6237\u540d\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}], "password": [{"message": "\u5bc6\u7801\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}]}
+ [ERROR] 2020-12-08 17:33:30,002 [Thread-3:104188] [interface:34] [users_views:get] - {"username": [{"message": "\u7528\u6237\u540d\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}], "password": [{"message": "\u5bc6\u7801\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}]}
+ [ERROR] 2020-12-08 17:33:59,444 [Thread-1:98888] [interface:34] [users_views:get] - {"username": [{"message": "\u7528\u6237\u540d\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}], "password": [{"message": "\u5bc6\u7801\u4e0d\u80fd\u4e3a\u7a7a", "code": "required"}]}
