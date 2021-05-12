@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7e7c9317-de95-463a-b295-a3b9495b2433" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomatedTestPlatform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutomatedTestPlatform/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/test_data_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/test_data_list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/all2.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/djangoLog.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/my.cnf" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$test.coverage" NAME="test Coverage Results" MODIFIED="1618650579437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$task_thread__1_.coverage" NAME="task_thread (1) Coverage Results" MODIFIED="1619071378359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$settings.coverage" NAME="settings Coverage Results" MODIFIED="1619078094965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AutomatedTestPlatform" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$setting.coverage" NAME="setting Coverage Results" MODIFIED="1610420830326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$Unittests_for_run_task_InterfaceTest.coverage" NAME="Unittests for run_task.InterfaceTest Coverage Results" MODIFIED="1613971565135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$run_task.coverage" NAME="run_task Coverage Results" MODIFIED="1620806352706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$Unittests_for_run_task_InterfaceTest.coverage" NAME="Unittests for run_task.InterfaceTest Coverage Results" MODIFIED="1619082071066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$tests.coverage" NAME="tests Coverage Results" MODIFIED="1607417818717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface_main" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$Unittests_for_run_task_InterfaceTest_test_run_cases.coverage" NAME="Unittests for run_task.InterfaceTest.test_run_cases Coverage Results" MODIFIED="1611800066405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$api_test_case_view.coverage" NAME="api_test_case_view Coverage Results" MODIFIED="1619144725220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$tests.coverage" NAME="tests Coverage Results" MODIFIED="1618469157216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$setting.coverage" NAME="setting Coverage Results" MODIFIED="1619087413476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$Unittests_for_run_task_InterfaceTest_test_run_cases.coverage" NAME="Unittests for run_task.InterfaceTest.test_run_cases Coverage Results" MODIFIED="1619084072518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$task_thread.coverage" NAME="task_thread Coverage Results" MODIFIED="1619595292523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$Unittests_in_run_task_py__1_.coverage" NAME="Unittests in run_task.py (1) Coverage Results" MODIFIED="1619071638908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$task_thread.coverage" NAME="task_thread Coverage Results" MODIFIED="1611737915328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$Unittests_in_run_task_py.coverage" NAME="Unittests in run_task.py Coverage Results" MODIFIED="1611743673329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1618974233606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$log.coverage" NAME="log Coverage Results" MODIFIED="1607417920147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface_main/utils" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$log.coverage" NAME="log Coverage Results" MODIFIED="1618194339368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/utils" />
+    <SUITE FILE_PATH="coverage/RayDataTestPlaformDjango$Unittests_in_run_task_py.coverage" NAME="Unittests in run_task.py Coverage Results" MODIFIED="1619089194316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+    <SUITE FILE_PATH="coverage/AutomatedTestPlatform$test.coverage" NAME="test Coverage Results" MODIFIED="1611738510522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="84" column="52" lean-forward="true" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="249" column="42" lean-forward="true" selection-start-line="249" selection-start-column="42" selection-end-line="249" selection-end-column="42" />
+              <folding>
+                <element signature="e#133#170#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my.cnf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-345">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>APITestResultAssociated</find>
+      <find>automated_main_apibusinesstest</find>
+      <find>managed</find>
+      <find>apibusinesstest</find>
+      <find>Api</find>
+      <find>apitesttask</find>
+      <find>apitestresult</find>
+      <find>r.json()</find>
+      <find>api_task_id</find>
+      <find>APITestResult</find>
+      <find>api_data</find>
+      <find>save_result</find>
+      <find>api_successful</find>
+      <find>api/backend/api_test_task/perform_api_task</find>
+      <find>api_error</find>
+      <find>api/backend/api_test_task/check_result_list/</find>
+      <find>django</find>
+      <find>django_content_type</find>
+      <find>apimodule</find>
+      <find>参数提取失败</find>
+      <find>api/backend/api_test_task/check_result_list</find>
+      <find>run_tasks</find>
+      <find>run</find>
+      <find>api_test_result</find>
+      <find>api/backend/api_test_task/check_result</find>
+      <find>CheckApiResult</find>
+      <find>api_request_results</find>
+      <find>api_key_variable</find>
+      <find>api_parameter_body</find>
+      <find>api_assert</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/automated_main/models/api_automation/api_module.py" />
+        <option value="$PROJECT_DIR$/automated_main/models/ui_automation/ui_page.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_module/api_module_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/form/api_module.py" />
+        <option value="$PROJECT_DIR$/automated_main/models/api_automation/api_environment.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_module/api_module_list_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_environment/api_environment_list_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_environment/api_environment_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/form/api_environment.py" />
+        <option value="$PROJECT_DIR$/automated_main/models/api_automation/api_test_case.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_project/api_project_list_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_list_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/form/api_ui_test_case.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_project/api_project_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/utils/http_format.py" />
+        <option value="$PROJECT_DIR$/automated_main/form/api_test_case.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/run_task.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_automation/logs.py" />
+        <option value="$PROJECT_DIR$/automated_main/models/api_automation/api_business_test.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_business_test/api_business_test_list_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/tests.py" />
+        <option value="$PROJECT_DIR$/automated_main/form/api_business_test.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/api_test_task_list_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/form/api_test_task.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/ui_test_task_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/results.html" />
+        <option value="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/setting.py" />
+        <option value="$PROJECT_DIR$/uwsgi.ini" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/setting.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/report/HTMLTestReportCN.py" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0005_auto_20210427_1015.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/test_data_list.json" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0007_auto_20210427_1629.py" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0004_apitestresult_apitesttask.py" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0002_apitestresultassociated.py" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0002_auto_20210428_1039.py" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0002_auto_20210428_1133.py" />
+        <option value="$PROJECT_DIR$/automated_main/models/__init__.py" />
+        <option value="$PROJECT_DIR$/AutomatedTestPlatform/urls.py" />
+        <option value="$PROJECT_DIR$/automated_main/migrations/0001_initial.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/api_test_task_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/run_task.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_business_test/api_business_test_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/task_thread.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_test_case_view.py" />
+        <option value="$PROJECT_DIR$/automated_main/models/api_automation/api_test_task.py" />
+        <option value="$PROJECT_DIR$/AutomatedTestPlatform/settings.py" />
+        <option value="$PROJECT_DIR$/my.cnf" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py" />
+        <option value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1934" />
+    <option name="height" value="1049" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RayDataTestPlaformDjango" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RayDataTestPlaformDjango" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/run_task.py" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RayDataTestPlaformDjango\venv\Scripts" />
+      <recent name="D:\RayDataTestPlaformDjango\automated_main\view\api_automation\api_test_task" />
+      <recent name="D:\RayDataTestPlaformDjango\automated_main\view\api_automation\api_project" />
+      <recent name="D:\AutomatedTestPlatform\automated_main\view\ui_automation\ui_test_task" />
+      <recent name="D:\AutomatedTestPlatform\automated_main\view\ui_automation\ui_test_case" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AutomatedTestPlatform\AutomatedTestPlatform" />
+      <recent name="D:\AutomatedTestPlatform" />
+      <recent name="D:\AutomatedTestPlatform\interface_main\models" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.run_task">
+    <configuration name="api_test_case_view" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutomatedTestPlatform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_task" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="AutomatedTestPlatform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\AutomatedTestPlatform\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/run_task.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="setting" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutomatedTestPlatform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/setting.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="task_thread" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutomatedTestPlatform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AutomatedTestPlatform" type="Python.DjangoServer" factoryName="Django server">
+      <module name="AutomatedTestPlatform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="AutomatedTestPlatform.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\AutomatedTestPlatform\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="0.0.0.0" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <module name="AutomatedTestPlatform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\AutomatedTestPlatform\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="0.0.0.0" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.AutomatedTestPlatform" />
+      <item itemvalue="Python.run_task" />
+      <item itemvalue="Python.setting" />
+      <item itemvalue="Python.task_thread" />
+      <item itemvalue="Python.api_test_case_view" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.task_thread" />
+        <item itemvalue="Python.api_test_case_view" />
+        <item itemvalue="Python.setting" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e7c9317-de95-463a-b295-a3b9495b2433" name="Default Changelist" comment="" />
+      <created>1605234649059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605234649059</updated>
+      <workItem from="1605234729033" duration="6070000" />
+      <workItem from="1605770030865" duration="463000" />
+      <workItem from="1606532181292" duration="5588000" />
+      <workItem from="1606718166273" duration="5029000" />
+      <workItem from="1606900011168" duration="1464000" />
+      <workItem from="1606907634350" duration="3740000" />
+      <workItem from="1607321469965" duration="22806000" />
+      <workItem from="1607562719270" duration="16057000" />
+      <workItem from="1607909867217" duration="926000" />
+      <workItem from="1607911167761" duration="10243000" />
+      <workItem from="1607998764099" duration="39177000" />
+      <workItem from="1608514480231" duration="3773000" />
+      <workItem from="1608606797727" duration="2051000" />
+      <workItem from="1608774151637" duration="16008000" />
+      <workItem from="1609210295656" duration="7976000" />
+      <workItem from="1609724043715" duration="804000" />
+      <workItem from="1609915304292" duration="36984000" />
+      <workItem from="1610335359283" duration="28156000" />
+      <workItem from="1610626523544" duration="3479000" />
+      <workItem from="1610681464738" duration="40315000" />
+      <workItem from="1610956124163" duration="23523000" />
+      <workItem from="1611372856445" duration="19888000" />
+      <workItem from="1611713481860" duration="2242000" />
+      <workItem from="1611716373876" duration="16661000" />
+      <workItem from="1613971533585" duration="682000" />
+      <workItem from="1613974181127" duration="14192000" />
+      <workItem from="1614156311085" duration="7220000" />
+      <workItem from="1614234854470" duration="7374000" />
+      <workItem from="1614664652934" duration="2755000" />
+      <workItem from="1616726450975" duration="6631000" />
+      <workItem from="1617071006267" duration="243000" />
+      <workItem from="1617083202167" duration="1752000" />
+      <workItem from="1617240174773" duration="50000" />
+      <workItem from="1617243243364" duration="23831000" />
+      <workItem from="1617674813589" duration="46167000" />
+      <workItem from="1617869303441" duration="8562000" />
+      <workItem from="1618024080799" duration="10689000" />
+      <workItem from="1618368298077" duration="22944000" />
+      <workItem from="1618631586233" duration="647000" />
+      <workItem from="1618641213893" duration="46698000" />
+      <workItem from="1619074052855" duration="9446000" />
+      <workItem from="1619085975425" duration="18245000" />
+      <workItem from="1619319030480" duration="77396000" />
+      <workItem from="1620266899065" duration="1199000" />
+      <workItem from="1620283239455" duration="5188000" />
+      <workItem from="1620443327002" duration="8960000" />
+      <workItem from="1620617762501" duration="42508000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 38m 12s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 38m 19s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 38m 29s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 38m 38s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 43m 01s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 43m 08s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 43m 36s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 55m 03s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 55m 07s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_run_task_py - 2021.04.22 at 18h 59m 55s.xml">
+      <configuration name="Unittests in run_task.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="695456000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.34273317" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27765727" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3275488" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.3394794" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989339" weight="0.3394794" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286334" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32936078" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" side_tool="true" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2260128" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.36442515" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27765727" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32858709" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053364" side_tool="true" weight="0.24315444" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4994664" weight="0.3394794" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286334" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32936078" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" side_tool="true" weight="0.32995737" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_page_element/ui_page_element_view.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/automated_main/migrations/0002_auto_20210428_1039.py" />
+    <entry file="file://$PROJECT_DIR$/automated_main/models/api_automation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/migrations/0002_auto_20210428_1133.py" />
+    <entry file="file://$PROJECT_DIR$/automated_main/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/models/ui_automation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/requests/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-789">
+          <caret line="899" column="53" lean-forward="true" selection-start-line="899" selection-start-column="53" selection-end-line="899" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/test_data_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_project/api_project_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-555" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_module/api_module_list_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/django/db/backends/mysql/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/django/db/backends/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/migrations/0002_apitestresult_api_task.py" />
+    <entry file="file://$PROJECT_DIR$/automated_main/migrations/0003_apitestresultassociated_api_business_test_name.py" />
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/pymysql/err.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1618">
+          <caret line="219" column="122" selection-start-line="219" selection-start-column="113" selection-end-line="219" selection-end-column="122" />
+          <folding>
+            <element signature="e#49#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/user/users_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/models/api_automation/api_module.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="864" selection-start-line="864" selection-end-line="864" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_module/api_module_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/django/db/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_positioning/ui_positioning_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="72" column="42" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/django/db/models/fields/json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-472">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutomatedTestPlatform/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="161" column="1" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/models/api_automation/api_test_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_list_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/selenium/webdriver/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_automation/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15539">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="e#115#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AutomatedTestPlatform/venv/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4735">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_test_case_list_view.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_business_test/api_business_test_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="145" column="44" lean-forward="true" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/models/api_automation/api_test_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+          <folding>
+            <element signature="e#129#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutomatedTestPlatform/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/all.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-1332" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_test_case_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="146" column="90" selection-start-line="146" selection-start-column="90" selection-end-line="146" selection-end-column="90" />
+          <folding>
+            <element signature="e#134#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutomatedTestPlatform/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding>
+            <element signature="e#322#346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/task_thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-457">
+          <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/api_test_task_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2011">
+          <caret line="290" column="17" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
+          <folding>
+            <element signature="e#134#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/test_data_list.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-end-column="458" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="6" column="61" lean-forward="true" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/models/ui_automation/ui_test_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-454">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="e#129#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/run_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="254" column="50" lean-forward="true" selection-start-line="254" selection-start-column="50" selection-end-line="254" selection-end-column="50" />
+          <folding>
+            <element signature="e#123#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="84" column="52" lean-forward="true" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="249" column="42" lean-forward="true" selection-start-line="249" selection-start-column="42" selection-end-line="249" selection-end-column="42" />
+          <folding>
+            <element signature="e#133#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
