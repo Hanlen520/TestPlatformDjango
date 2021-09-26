@@ -2,17 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7c9317-de95-463a-b295-a3b9495b2433" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AutomatedTestPlatform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutomatedTestPlatform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutomatedTestPlatform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutomatedTestPlatform/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/test_data_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/test_data_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/all2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/djangoLog.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-16-36-21_100_HTTP请求.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-16-39-11-22-2222.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-16-42-38-59-20210517PCMS.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-16-04-32-20210517PCMS.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-16-45-57-HTTP请求.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-04-56-2222.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-14-65-2222.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-34-13-2222.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-49-53-2222.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-18-29-74-20210517PCMS.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-15-13-30-46-32-test.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-30-14-36-06-16-RO_v1.0.9新增接口 20210629.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-30-14-40-20-6-RO_v1.0.9新增接口20210629.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-11-17-03-25-84-730压测汇总.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-11-17-08-03-19-可视化登录.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-13-18-44-06-92-730压测汇总.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-17-16-34-12-1-可视化登录.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/release_log/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/release_log/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/20210517PCMS cms账号管理.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/2222.jmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/HTTP请求.jmx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/my.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/my.cnf" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,43 +74,6 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/task_thread.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="84" column="52" lean-forward="true" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automated_main/view/api_automation/api_test_case/api_test_case_view.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="249" column="42" lean-forward="true" selection-start-line="249" selection-start-column="42" selection-end-line="249" selection-end-column="42" />
-              <folding>
-                <element signature="e#133#170#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my.cnf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-345">
-              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -203,6 +182,7 @@
     <option name="width" value="1934" />
     <option name="height" value="1049" />
   </component>
+  <component name="ProjectId" id="1yfIKgmtbSMayC0gYDaKw1sXvTt" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -222,9 +202,13 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/automated_main/view/api_automation/api_test_task/extend/run_task.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -242,18 +226,6 @@
       <recent name="D:\AutomatedTestPlatform" />
       <recent name="D:\AutomatedTestPlatform\interface_main\models" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.run_task">
     <configuration name="api_test_case_view" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -392,7 +364,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.AutomatedTestPlatform" />
+      <item itemvalue="Django Server.AutomatedTestPlatform" />
       <item itemvalue="Python.run_task" />
       <item itemvalue="Python.setting" />
       <item itemvalue="Python.task_thread" />
@@ -406,6 +378,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -463,6 +436,7 @@
       <workItem from="1620283239455" duration="5188000" />
       <workItem from="1620443327002" duration="8960000" />
       <workItem from="1620617762501" duration="42508000" />
+      <workItem from="1632636157391" duration="448000" />
     </task>
     <servers />
   </component>
@@ -563,7 +537,18 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
