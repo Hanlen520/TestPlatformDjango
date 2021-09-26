@@ -10,13 +10,13 @@ from automated_main.exception.my_exception import MyException
 
 class UserInfoView(View):
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表获取用户的登录信息
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         user = request.user
         if user.is_authenticated:

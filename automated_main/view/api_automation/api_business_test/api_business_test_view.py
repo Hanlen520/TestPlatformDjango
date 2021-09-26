@@ -28,7 +28,6 @@ class GetApiBusinessTestSelectData(View):
         :return:
         """
         api_projects = APIProject.objects.filter(id=api_project_id)
-        print(api_projects)
         data_list = []
         for api_project in api_projects:
             project_dict = {
@@ -48,8 +47,6 @@ class GetApiBusinessTestSelectData(View):
 
                     })
 
-                print(api_test_case_list)
-
                 api_module_list.append({
                     "api_module_id": api_module.id,
                     "api_module_name": api_module.api_module_name,
@@ -59,7 +56,6 @@ class GetApiBusinessTestSelectData(View):
             project_dict["module_list"] = api_module_list
 
             data_list.append(project_dict)
-            print(data_list)
 
         return response_success(data_list)
 
@@ -89,7 +85,7 @@ class ApiBusinessTestView(View):
         """
 
         api_business_test = ApiBusinessTest.objects.get(id=api_business_test_id)
-        api_business_test_associated = ApiBusinessTestAssociated.objects.filter(bid_id=api_business_test_id).order_by("case_steps")
+        api_business_test_associated = ApiBusinessTestAssociated.objects.filter(bid_id=api_business_test_id)
 
         if api_business_test is None:
             return response_success()
@@ -99,13 +95,14 @@ class ApiBusinessTestView(View):
                 api_business_test_dict = {
                     "api_module_id": api_business_test_associateds.api_module_id,
                     "api_test_case_id": api_business_test_associateds.api_test_case_id,
-                    "steps": api_business_test_associateds.case_steps,
+                    "steps": int(api_business_test_associateds.case_steps),
                 }
                 api_business_test_data_list.append(api_business_test_dict)
+            api_business_test_data_list_sorting = sorted(api_business_test_data_list, key=lambda x: x['steps'])
 
             return response_success({"api_business_test_name": api_business_test.api_business_test_name,
                                      "api_project_id": api_business_test.api_project_id,
-                                     "api_business_test_data": api_business_test_data_list})
+                                     "api_business_test_data": api_business_test_data_list_sorting})
 
     def post(self, request, api_business_test_id, *args, **kwargs):
         """
@@ -155,14 +152,12 @@ class ApiBusinessTestView(View):
         if not body:
             return response_success()
         data = json.loads(body)
-        print(data)
         form = ApiBusinessTestForm(data)
         if form.is_valid():
             api_business_test = ApiBusinessTest.objects.create(**form.cleaned_data)
             api_business_test_id = api_business_test.id
 
             for i in data["api_business_test_data"]:
-                print(i)
                 api_module_id = (i['api_module_id'])
                 api_test_case_id = (i['api_test_case_id'])
                 case_steps = (i['steps'])

@@ -1,0 +1,8 @@
+self.bases.open_url("http://test-ro-cms.raykite.com/login") 
+time.sleep(2) 
+self.bases.send_keys("xpath","//*[@id='username']","13730367945") 
+time.sleep(2) 
+self.bases.send_keys("xpath","//*[@id='password']","Raydata666") 
+time.sleep(2) 
+self.bases.click("xpath","//*[@type='submit']") 
+time.sleep(2) 

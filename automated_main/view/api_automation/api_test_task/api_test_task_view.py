@@ -13,13 +13,8 @@ from automated_main.models.api_automation.api_project import APIProject
 from automated_main.models.api_automation.api_business_test import ApiBusinessTest
 from automated_main.form.api_test_task import ApiTestTaskForm
 from automated_main.view.api_automation.api_test_task.extend.task_thread import TaskThread
-
-
-
-
-
-
 from django.core import serializers
+from django.core.paginator import Paginator
 
 
 class ApiTestTaskView(View):
@@ -33,7 +28,6 @@ class ApiTestTaskView(View):
         :param kwargs:
         :return:
         """
-        print(api_test_task_id)
         ui_test_task = APITestTask.objects.get(id=api_test_task_id)
         return response_success(model_to_dict(ui_test_task))
 
@@ -62,10 +56,8 @@ class ApiTestTaskView(View):
         if not body:
             return response_success()
         data = json.loads(body)
-        print(data)
 
         form = ApiTestTaskForm(data)
-        print(data['api_test_task_id'])
 
         if form.is_valid():
             print(data)
@@ -242,9 +234,11 @@ class CheckApiResultList(View):
 
 
 class CheckApiResult(View):
-    def get(self, request, api_test_result_id, *args, **kwargs):
+    def get(self, request, api_test_result_id, size_page, page, *args, **kwargs):
         """
         查看任务--测试报告列表--测试结果列表
+        :param size_page: 展示条数
+        :param page: 页数
         :param request:
         :param api_test_result_id:
         :param args:
@@ -254,7 +248,7 @@ class CheckApiResult(View):
         if api_test_result_id == "":
             return response_failed({"status": 10102, "message": "api_test_task_id不能为空"})
         r = APITestResultAssociated.objects.filter(api_result_id=api_test_result_id)
-        print(r)
+
         data = []
         for i in r:
             result = {
@@ -273,7 +267,15 @@ class CheckApiResult(View):
                 "create_time": i.create_time
             }
             data.append(result)
-        return response_success({'status': 10102, 'data': data})
+
+        p = Paginator(data, size_page)
+        page1 = p.page(page)
+        current_page = page1.object_list
+        api_result = APITestResult.objects.get(id=api_test_result_id)
+
+        case_result_total = [int(api_result.api_successful_total_number), int(api_result.api_error_total_number)]
+
+        return response_success({'status': 10102, 'data': current_page, "case_result_total": case_result_total})
 
     def post(self, request, api_test_case_result_id, *args, **kwargs):
         """
@@ -287,7 +289,6 @@ class CheckApiResult(View):
         if api_test_case_result_id == "":
             return response_failed({"status": 10102, "message": "api_test_case_result_id不能为空"})
         r = APITestResultAssociated.objects.filter(id=api_test_case_result_id)
-        print(r)
         data = []
         for i in r:
             result = {
@@ -304,8 +305,14 @@ class CheckApiResult(View):
                 "api_result_id": i.api_result_id,
                 "api_task_id": i.api_task_id,
                 "create_time": i.create_time,
-                "api_variable_results": i.api_variable_results
+                "api_variable_results": i.api_variable_results,
+                "api_header": i.api_header,
+                "api_url": i.api_url,
+                "api_body": i.api_body
             }
+
+
+
             data.append(result)
         return response_success({'status': 10102, 'data': data})
 
@@ -323,6 +330,53 @@ class CheckApiResult(View):
         APITestResult.objects.get(id=api_test_result_id).delete()
 
         return response_success("删除测试报告成功")
+
+
+class CheckApiResultErrorList(View):
+    def get(self, request, api_test_result_id, size_page, page, *args, **kwargs):
+        """
+        查看任务--测试报告列表--测试结果列表
+        :param size_page: 展示条数
+        :param page: 页数
+        :param request:
+        :param api_test_result_id:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        print(api_test_result_id)
+        if api_test_result_id == "":
+            return response_failed({"status": 10102, "message": "api_test_task_id不能为空"})
+        r = APITestResultAssociated.objects.filter(api_result_id=api_test_result_id, api_error=1)
+
+        data = []
+        for i in r:
+            result = {
+                "id": i.id,
+                "api_test_case_name": i.api_test_case_name,
+                "api_task_name": i.api_task.api_test_task_name,
+                "api_business_test_name": i.api_business_test_name,
+                "api_error": i.api_error,
+                "api_successful": i.api_successful,
+                "abnormal": i.abnormal,
+                "json_extract_variable_conversion": i.json_extract_variable_conversion,
+                "api_assertion_results": i.api_assertion_results,
+                "api_request_results": i.api_request_results,
+                "api_result_id": i.api_result_id,
+                "api_task_id": i.api_task_id,
+                "create_time": i.create_time
+            }
+            data.append(result)
+
+        p = Paginator(data, size_page)
+        page1 = p.page(page)
+        current_page = page1.object_list
+        api_result = APITestResult.objects.get(id=api_test_result_id)
+
+        case_result_total = [int(api_result.api_successful_total_number), int(api_result.api_error_total_number)]
+        print(case_result_total)
+
+        return response_success({'status': 10102, 'data': current_page, "case_result_total": case_result_total})
 
 
 class PerformApiTask(View):
@@ -348,10 +402,8 @@ class PerformApiTask(View):
 
         # 2. 修改任务的状态为：1-执行中
         task = APITestTask.objects.get(id=api_test_task_id)
-        print("第一次", task.status)
         task.status = 1
         task.save()
-        print("第二次", task.status)
 
         # 通过多线程运行测试任务
         TaskThread(api_test_task_id).run()

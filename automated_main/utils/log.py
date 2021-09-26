@@ -4,5 +4,7 @@
 # @FileName: log.py
 # @Software: PyCharm
 import logging
-log = logging.getLogger('interface')
+log = logging.getLogger('django')
 default_log = log
+
+print(log.info("ces"))

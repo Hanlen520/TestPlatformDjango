@@ -16,6 +16,9 @@ from automated_main.models.api_automation.api_environment import APIEnvironment
 from automated_main.models.api_automation.api_test_case import ApiTestCase
 from automated_main.models.api_automation.api_business_test import ApiBusinessTest, ApiBusinessTestAssociated
 from automated_main.models.api_automation.api_test_task import APITestTask, APITestResultAssociated, APITestResult
+from automated_main.models.performance_test.performance_project import PerformanceProject
+from automated_main.models.performance_test.performance_script import PerformanceScript
+
 
 
 

@@ -12,12 +12,204 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+# from turtle import home
+
+ENV_PROFILE = os.getenv("ENV")
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+if ENV_PROFILE == "SERVER":
+    # 生产环境地址
+    ALLOWED_HOSTS = ["10.10.10.137"]
+
+    # 配置自动化脚本日志文件的存储位置
+    WEB_ROOT = os.path.join('/home/Web_Script')
+    # 访问资源上传的路径
+    WEB_URL = "/home/Web_Script/"
+    CORS_ORIGIN_WHITELIST = (
+        ['http://127.0.0.1:*', 'http://10.10.10.137:*']
+
+    )
+
+    # mysql
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'OPTIONS': {
+                'read_default_file': BASE_DIR + '/release.cnf',
+                'init_command': 'SET foreign_key_checks = 0;',
+            },
+        }
+    }
+
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            'simple': {
+                'format': '%(levelname)s %(message)s'
+            },
+            'standard': {
+                'format': ' [%(levelname)s] %(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] - %(message)s'}
+        },
+        'filters': {
+        },
+        'handlers': {
+            'default': {
+                'level': 'DEBUG',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(BASE_DIR, 'log/release_log/all.log'),  # 日志输出文件
+                'maxBytes': 1024 * 1024 * 5,  # 文件大小
+                'backupCount': 5,  # 备份份数
+                'formatter': 'standard',  # 使用哪种formatters日志格式
+                'encoding': 'utf-8',
+            },
+            'error': {
+                'level': 'ERROR',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(BASE_DIR, 'log/release_log/error.log'),
+                'maxBytes': 1024 * 1024 * 5,
+                'backupCount': 5,
+                'formatter': 'standard',
+                'encoding': 'utf-8',
+            },
+            'console': {
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+                'formatter': 'simple'
+            },
+            'info': {
+                'level': 'INFO',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(BASE_DIR, 'log/release_log/info.log'),
+                'maxBytes': 1024 * 1024 * 5,
+                'backupCount': 5,
+                'formatter': 'standard',
+                'encoding': 'utf-8',
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['default', 'console'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'django.request': {
+                'handlers': ['default', 'console'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'interface': {
+                'handlers': ['default', 'info', 'console', 'error'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+        }
+    }
+
+elif ENV_PROFILE == "1":
+    # 测试环境地址
+    ALLOWED_HOSTS = ["10.10.12.92"]
+    # 配置自动化脚本日志文件的存储位置
+    WEB_ROOT = os.path.join(BASE_DIR, 'web_log/test_log')
+    # 访问资源上传的路径
+    WEB_URL = "/Web_Script/"
+
+    CORS_ORIGIN_WHITELIST = (
+        ['http://127.0.0.1:*', 'http://10.10.10.137:*', 'http://10.10.12.92:*']
+
+    )
+
+    # mysql
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'OPTIONS': {
+                'read_default_file': BASE_DIR + '/dev.cnf',
+                'init_command': 'SET foreign_key_checks = 0;',
+            },
+        }
+    }
+
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            'simple': {
+                'format': '%(levelname)s %(message)s'
+            },
+            'standard': {
+                'format': ' [%(levelname)s] %(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] - %(message)s'}
+        },
+        'filters': {
+        },
+        'handlers': {
+            'default': {
+                'level': 'DEBUG',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(BASE_DIR, 'log/test_log/all.log'),  # 日志输出文件
+                'maxBytes': 1024 * 1024 * 5,  # 文件大小
+                'backupCount': 5,  # 备份份数
+                'formatter': 'standard',  # 使用哪种formatters日志格式
+                'encoding': 'utf-8',
+            },
+            'error': {
+                'level': 'ERROR',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(BASE_DIR, 'log/test_log/error.log'),
+                'maxBytes': 1024 * 1024 * 5,
+                'backupCount': 5,
+                'formatter': 'standard',
+                'encoding': 'utf-8',
+            },
+            'console': {
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+                'formatter': 'simple'
+            },
+            'info': {
+                'level': 'INFO',
+                'class': 'logging.handlers.RotatingFileHandler',
+                'filename': os.path.join(BASE_DIR, 'log/test_log/info.log'),
+                'maxBytes': 1024 * 1024 * 5,
+                'backupCount': 5,
+                'formatter': 'standard',
+                'encoding': 'utf-8',
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['default', 'console'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'django.request': {
+                'handlers': ['default', 'console'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+            'interface': {
+                'handlers': ['default', 'info', 'console', 'error'],
+                'level': 'INFO',
+                'propagate': False,
+            },
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(os.path.join(BASE_DIR, 'log/error.log'))
-
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,14 +218,7 @@ print(os.path.join(BASE_DIR, 'log/error.log'))
 SECRET_KEY = '$5k4rpds2$k1y1wtw25-+qc4n^b4en=lvo)6o^=pt3-2exqp_6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-# 生产环境地址
-# ALLOWED_HOSTS = ["10.10.10.137"]
-
-# 测试环境地址
-ALLOWED_HOSTS = ["10.10.102.92"]
-
+# DEBUG = False
 
 # Application definition
 
@@ -65,10 +250,10 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-    ['http://127.0.0.1:*', 'http://10.10.10.137:*']
-
-)
+# CORS_ORIGIN_WHITELIST = (
+#     ['http://127.0.0.1:*', 'http://10.10.10.137:*']
+#
+# )
 
 CORS_ALLOW_METHODS = (
     'DELETE',
@@ -131,23 +316,6 @@ DATABASES = {
 }
 """
 
-# mysql
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': BASE_DIR + '/my.cnf',
-            'init_command': 'SET foreign_key_checks = 0;',
-        },
-    }
-}
-print(BASE_DIR + '/my.cnf')
-
-
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -185,135 +353,26 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# 配置上传文件的存储位置
+JMETER_ROOT = os.path.join(BASE_DIR, 'jmeter_script')
+
+# web脚本模板位置
+WEB_TEMPLATE = os.path.join(BASE_DIR, 'automated_main/view/ui_automation/ui_test_task/extend/TestScriptTemplate.py')
+
+
+# 访问资源上传的路径
+JMETER_URL = "/jmeter_script/"
+
+# jmeter测试报告
+JMETER_REPORT = os.path.join(BASE_DIR, 'jmeter_report/Report')
+
+# 访问性能报告上传的路径
+JMETER_REPORT_URL = "/jmeter_report/Report/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-
-
-
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': True,
-#     'formatters': {
-#         'standard': {
-#             'format': ' [%(levelname)s] %(asctime)s [%(threadName)s:%(thread)d] [%(filename)s:%(lineno)d] [%(module)s:%(funcName)s] - %(message)s'}
-#           #日志格式
-#     },
-#     'filters': {
-#     },
-#     'handlers': {
-#         'default': {
-#             'level': 'DEBUG',
-#             'class': 'logging.handlers.RotatingFileHandler',
-#             'filename': os.path.join(BASE_DIR, 'log/all.log'),     #日志输出文件
-#             'maxBytes': 1024*1024*5,                  #文件大小
-#             'backupCount': 5,                         #备份份数
-#             'formatter': 'standard',                   #使用哪种formatters日志格式
-#         },
-#         'error': {
-#             'level': 'ERROR',
-#             'class': 'logging.handlers.RotatingFileHandler',
-#             'filename': os.path.join(BASE_DIR, 'log/error.log'),
-#             'maxBytes': 1024*1024*5,
-#             'backupCount': 5,
-#             'formatter': 'standard',
-#         },
-#         'console': {
-#             'level': 'DEBUG',
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'standard'
-#         },
-#         'info': {
-#             'level': 'INFO',
-#             'class': 'logging.handlers.RotatingFileHandler',
-#             'filename': os.path.join(BASE_DIR, 'log/info.log'),
-#             'maxBytes': 1024*1024*5,
-#             'backupCount': 5,
-#             'formatter': 'standard',
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['default', 'console'],
-#             'level': 'DEBUG',
-#             'propagate': False
-#         },
-#         'django.request': {
-#             'handlers': ['default','console'],
-#             'level': 'DEBUG',
-#             'propagate': False,
-#         },
-#         'interface': {
-#             'handlers': ['default', 'info',  'console', 'error'],
-#             'level': 'DEBUG',
-#             'propagate': False,
-#         },
-#     }
-# }
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-        'standard': {
-            'format': ' [%(levelname)s] %(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] - %(message)s'}
-    },
-    'filters': {
-    },
-    'handlers': {
-        'default': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'log/all.log'),     #日志输出文件
-            'maxBytes': 1024*1024*5,                  #文件大小
-            'backupCount': 5,                         #备份份数
-            'formatter': 'standard',                   #使用哪种formatters日志格式
-        },
-        'error': {
-            'level': 'ERROR',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'log/error.log'),
-            'maxBytes': 1024*1024*5,
-            'backupCount': 5,
-            'formatter': 'standard',
-        },
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-        'info': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'log/info.log'),
-            'maxBytes': 1024*1024*5,
-            'backupCount': 5,
-            'formatter': 'standard',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['default', 'console'],
-            'level': 'INFO',
-            'propagate': False
-        },
-        'django.request': {
-            'handlers': ['default', 'console'],
-            'level': 'INFO',
-            'propagate': False,
-        },
-        'interface': {
-            'handlers': ['default', 'info',  'console', 'error'],
-            'level': 'INFO',
-            'propagate': False,
-        },
-    }
-}
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # 引擎（默认）
 SESSION_COOKIE_NAME = "sessionid"  # Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串（默认）

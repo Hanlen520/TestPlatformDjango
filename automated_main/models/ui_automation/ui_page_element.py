@@ -17,6 +17,7 @@ class UIPageElement(models.Model):
     ui_page = models.ForeignKey(UIPage, on_delete=models.CASCADE)
     ui_page_element_name = models.CharField("UI页面元素名称", max_length=100, null=False)
     ui_page_element = models.CharField("UI页面元素", max_length=600, null=False)
+    ui_page_element_more = models.CharField("UI页面元素-多个", max_length=600, null=True)
     ui_element_positioning = models.ForeignKey(UIPositioning, on_delete=models.CASCADE)
     create_time = models.DateTimeField("创建时间", auto_now_add=True)
     updata_time = models.DateTimeField(auto_now_add=True)

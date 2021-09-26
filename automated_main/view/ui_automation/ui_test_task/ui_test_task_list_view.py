@@ -12,17 +12,17 @@ import arrow
 class UITestTaskListView(View):
 
     def get(self, request, ui_project_id, *args, **kwargs):
-        '''
+        """
         代表获取所有UI测试任务
         :param request:
+        :param ui_project_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
         ui_task = UITestTask.objects.filter(ui_project_id=ui_project_id).order_by('id')
         ui_task_list = []
         for ui_tasks in ui_task:
-            _tz = 'Asia/Shanghai'
             if ui_tasks.status == 0:
                 status = "未执行"
             elif ui_tasks.status == 1:
@@ -36,11 +36,10 @@ class UITestTaskListView(View):
                 "cases": ui_tasks.cases,
                 "ui_project_name": ui_tasks.ui_project.ui_project_name,
                 "status": status,
-                "updata_time": arrow.get(ui_tasks.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(ui_tasks.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(ui_tasks.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(ui_tasks.create_time)).format('YYYY-MM-DD HH:mm:ss'),
 
             }
-            print(ui_tasks.create_time)
             ui_task_list.append(ui_task_dict)
 
         return response_success(ui_task_list)

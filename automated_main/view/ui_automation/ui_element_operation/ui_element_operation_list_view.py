@@ -13,28 +13,26 @@ from django.core.paginator import Paginator
 class UiElementOperationListView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表获取所有元素操作
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         ui_element_operation = UIElementsOperation.objects.all()
         ui_element_operation_list = []
 
         for element_operation in ui_element_operation:
-            _tz = 'Asia/Shanghai'
             element_operation_dict = {
                 "id": element_operation.id,
                 "elements_operation_name": element_operation.elements_operation_name,
                 "elements_operation_title": element_operation.elements_operation_title,
                 "elements_operation_describe": element_operation.elements_operation_describe,
-                "updata_time": arrow.get(element_operation.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(element_operation.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss')
+                "updata_time": arrow.get(str(element_operation.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(element_operation.create_time)).format('YYYY-MM-DD HH:mm:ss')
             }
-            print(element_operation.create_time)
             ui_element_operation_list.append(element_operation_dict)
 
         return response_success(ui_element_operation_list)

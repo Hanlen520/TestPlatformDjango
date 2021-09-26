@@ -12,13 +12,13 @@ import arrow
 class UiElementPositioningListView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表获取所有定位方法
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         data = request.GET
         size = int(data.get('size', 10))
@@ -27,14 +27,13 @@ class UiElementPositioningListView(View):
         ui_element_positioning_list = []
 
         for element_positioning in ui_element_positioning:
-            _tz = 'Asia/Shanghai'
             element_positioning_dict = {
                 "id": element_positioning.id,
                 "positioning_name": element_positioning.positioning_name,
                 "locating_method": element_positioning.locating_method,
                 "describe": element_positioning.describe,
-                "updata_time": arrow.get(element_positioning.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(element_positioning.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss')
+                "updata_time": arrow.get(str(element_positioning.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(element_positioning.create_time)).format('YYYY-MM-DD HH:mm:ss')
             }
 
             ui_element_positioning_list.append(element_positioning_dict)

@@ -12,19 +12,18 @@ import arrow
 class UIPageElementListView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表获取所有页面元素
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         ui_page_element = UIPageElement.objects.all()
         ui_page_element_list = []
 
         for page_element in ui_page_element:
-            _tz = 'Asia/Shanghai'
             page_element_dict = {
                 "id": page_element.id,
                 "ui_project_id": page_element.ui_project.id,
@@ -35,8 +34,8 @@ class UIPageElementListView(View):
                 "ui_page_element": page_element.ui_page_element,
                 "ui_element_positioning_id": page_element.ui_element_positioning.id,
                 "ui_element_positioning_name": page_element.ui_element_positioning.positioning_name,
-                "updata_time": arrow.get(page_element.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(page_element.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss')
+                "updata_time": arrow.get(str(page_element.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(page_element.create_time)).format('YYYY-MM-DD HH:mm:ss')
             }
 
             ui_page_element_list.append(page_element_dict)

@@ -19,13 +19,14 @@ import datetime
 class UiProjectView(View):
 
     def get(self, request, ui_project_id, *args, **kwargs):
-        '''
+        """
         代表获取单个项目
         :param request:
+        :param ui_project_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         ui_project = UIProject.objects.filter(id=ui_project_id).first()
         if ui_project is None:
@@ -34,13 +35,14 @@ class UiProjectView(View):
             return response_success(model_to_dict(ui_project))
 
     def post(self, request, ui_project_id, *args, **kwargs):
-        '''
+        """
         代表更改项目
         :param request:
+        :param ui_project_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         ui_project = UIProject.objects.filter(id=ui_project_id).first()
         if ui_project is None:
@@ -53,33 +55,32 @@ class UiProjectView(View):
         form = UiProjectForm(data)
 
         if form.is_valid():
-            # UIProject.objects.filter(id=ui_project_id).update(ui_project_name=form.cleaned_data["ui_project_name"],
-            #                                                   describe=form.cleaned_data["describe"])
             UIProject.objects.filter(id=ui_project_id).update(**form.cleaned_data)
             return response_success("编辑UI项目成功")
         else:
             raise MyException()
 
     def delete(self, request, ui_project_id, *args, **kwargs):
-        '''
+        """
         代表删除单独项目
         :param request:
+        :param ui_project_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         UIProject.objects.filter(id=ui_project_id).delete()
         return response_success()
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建项目
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:
@@ -89,21 +90,20 @@ class UiProjectView(View):
         form = UiProjectForm(data)
 
         if form.is_valid():
-            # UIProject.objects.filter(id=ui_project_id).update(ui_project_name=form.cleaned_data["ui_project_name"],
-            #                                                   describe=form.cleaned_data["describe"])
             UIProject.objects.create(**form.cleaned_data)
             return response_success()
         else:
             raise MyException()
 
     def post(self, request, ui_project_id, *args, **kwargs):
-        '''
+        """
         代表编辑项目
         :param request:
+        :param ui_project_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         ui_project = UIProject.objects.filter(id=ui_project_id).first()
         if ui_project is None:
@@ -116,7 +116,6 @@ class UiProjectView(View):
         data = json.loads(body)
 
         form = UiProjectForm(data)
-        print(form)
         if form.is_valid():
             UIProject.objects.filter(id=ui_project_id).update(**form.cleaned_data, updata_time=datetime.datetime.now())
             return response_success()

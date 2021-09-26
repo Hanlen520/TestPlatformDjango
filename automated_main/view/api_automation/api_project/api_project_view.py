@@ -20,13 +20,14 @@ import datetime
 class ApiProjectView(View):
 
     def get(self, request, api_project_id, *args, **kwargs):
-        '''
+        """
         代表获取单个API项目
         :param request:
+        :param api_project_id: API项目ID
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         api_project = APIProject.objects.filter(id=api_project_id).first()
         if api_project is None:
@@ -38,7 +39,7 @@ class ApiProjectView(View):
         """
         代表更改API项目
         :param request:
-        :param api_project_id:
+        :param api_project_id:API项目ID
         :param args:
         :param kwargs:
         :return:
@@ -62,25 +63,26 @@ class ApiProjectView(View):
             raise MyException()
 
     def delete(self, request, api_project_id, *args, **kwargs):
-        '''
+        """
         代表删除单独API项目
         :param request:
+        :param api_project_id: API项目ID
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         APIProject.objects.filter(id=api_project_id).delete()
         return response_success()
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建API项目
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:
@@ -94,30 +96,3 @@ class ApiProjectView(View):
             return response_success()
         else:
             raise MyException()
-
-    # def post(self, request, api_project_id, *args, **kwargs):
-    #     '''
-    #     代表编辑项目
-    #     :param request:
-    #     :param args:
-    #     :param kwargs:
-    #     :return:
-    #     '''
-    #
-    #     api_project = APIProject.objects.filter(id=api_project_id).first()
-    #     if api_project is None:
-    #         return response_success()
-    #
-    #     body = request.body
-    #
-    #     if not body:
-    #         return response_success()
-    #     data = json.loads(body)
-    #
-    #     form = ApiProjectForm(data)
-    #     print(form)
-    #     if form.is_valid():
-    #         APIProject.objects.filter(id=api_project_id).update(**form.cleaned_data, updata_time=datetime.datetime.now())
-    #         return response_success()
-    #     else:
-    #         raise MyException()

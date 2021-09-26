@@ -1,0 +1,7 @@
+[client]
+host = 10.10.10.137
+port = 3306
+user = root
+password = root
+database = test_qa
+default-character-set = utf8

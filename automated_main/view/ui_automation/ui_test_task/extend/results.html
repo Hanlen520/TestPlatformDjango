@@ -158,19 +158,19 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">自动化测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> WangYingHao</p>
-<p class='attribute'><strong>开始时间 : </strong> 2021-01-26 10:05:46</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:24.394960</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 1，通过 1，通过率= 100.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2021-06-23 11:23:34</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:27.926717</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 1，错误 1，通过率= 0.00%</p>
 
-<p class='description'>2021-01-26-10:05:46</p>
+<p class='description'>2021-06-23-11:23:34</p>
 </div>
 
 
 
     <p id='show_detail_line'>
-    <a class="btn btn-primary" href='javascript:showCase(0)'>通过率 [100.00% ]</a>
-    <a class="btn btn-success" href='javascript:showCase(2)'>通过[ 1 ]</a>
-    <a class="btn btn-warning" href='javascript:showCase(3)'>错误[ 0 ]</a>
+    <a class="btn btn-primary" href='javascript:showCase(0)'>通过率 [0.00% ]</a>
+    <a class="btn btn-success" href='javascript:showCase(2)'>通过[ 0 ]</a>
+    <a class="btn btn-warning" href='javascript:showCase(3)'>错误[ 1 ]</a>
     <a class="btn btn-danger" href='javascript:showCase(1)'>失败[ 0 ]</a>
     <a class="btn btn-info" href='javascript:showCase(4)'>所有[ 1 ]</a>
     </p>
@@ -192,30 +192,113 @@ function html_escape(s) {
     <td>详细</td>
 </tr>
 
-<tr class='passClass warning'>
+<tr class='errorClass warning'>
     <td>InterfaceTest</td>
     <td class="text-center">1</td>
-    <td class="text-center">1</td>
     <td class="text-center">0</td>
+    <td class="text-center">1</td>
     <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
 </tr>
 
-<tr id='pt1_1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_run_cases_00001_69: test_run_cases_00001_69</div></td>
+<tr id='ft1_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_run_cases_00001_1: test_run_cases_00001_1</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
-    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
-    <div id='div_pt1_1' class="collapse">  -->
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <div id='div_ft1_1' class="collapse">  -->
 
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
-    <div id='div_pt1_1' class="collapse in" style='text-align: left; color:red;cursor:pointer'>
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <div id='div_ft1_1' class="collapse in" style='text-align: left; color:red;cursor:pointer'>
     <pre>
     
-pt1_1: 这是data中得数据：  3 106 5
-这是data中得数据： 测撒 2 105 5
-这是data中得数据：  1 104 5
+ft1_1: Traceback (most recent call last):
+  File "D:/RayDataTestPlaformDjango/automated_main/view/ui_automation/ui_test_task/extend/run_task.py", line 85, in test_run_cases
+    self.bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element)
+  File "D:\RayDataTestPlaformDjango\automated_main\view\ui_automation\ui_test_case\ui_automation\base.py", line 122, in click
+    return self.element(by, element).click()
+AttributeError: 'bool' object has no attribute 'click'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python3\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python3\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python3\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Python3\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Python3\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python3\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'ui_task_id' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python3\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:/RayDataTestPlaformDjango/automated_main/view/ui_automation/ui_test_task/extend/run_task.py", line 246, in test_run_cases
+    UITestResultAssociated.objects.create()
+  File "C:\Python3\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python3\lib\site-packages\django\db\models\query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python3\lib\site-packages\django\db\models\base.py", line 754, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python3\lib\site-packages\django\db\models\base.py", line 792, in save_base
+    force_update, using, update_fields,
+  File "C:\Python3\lib\site-packages\django\db\models\base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Python3\lib\site-packages\django\db\models\base.py", line 935, in _do_insert
+    using=using, raw=raw,
+  File "C:\Python3\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python3\lib\site-packages\django\db\models\query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Python3\lib\site-packages\django\db\models\sql\compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python3\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Python3\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Python3\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python3\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Python3\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python3\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python3\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "C:\Python3\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Python3\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "C:\Python3\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Python3\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'ui_task_id' cannot be null")
 
 
     </pre>
@@ -226,10 +309,10 @@ pt1_1: 这是data中得数据：  3 106 5
 <tr id='total_row' class="text-center active">
     <td>总计</td>
     <td>1</td>
+    <td>0</td>
     <td>1</td>
     <td>0</td>
-    <td>0</td>
-    <td>通过率：100.00%</td>
+    <td>通过率：0.00%</td>
 </tr>
 </table>
 
@@ -266,9 +349,9 @@ pt1_1: 这是data中得数据：  3 106 5
     radius : '60%',
     center: ['50%', '60%'],
     data:[
-    {value:1, name:'通过'},
+    {value:0, name:'通过'},
     {value:0, name:'失败'},
-    {value:0, name:'错误'}
+    {value:1, name:'错误'}
     ],
     itemStyle: {
     emphasis: {

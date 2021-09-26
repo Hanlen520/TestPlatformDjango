@@ -15,13 +15,14 @@ from automated_main.form.ui_element_operation import UIElementsOperationForm
 class UIElementOperationView(View):
 
     def get(self, request, element_operation_id, *args, **kwargs):
-        '''
+        """
         代表获取单个元素操作
         :param request:
+        :param element_operation_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         element_operation = UIElementsOperation.objects.filter(id=element_operation_id).first()
         if element_operation is None:
@@ -30,13 +31,14 @@ class UIElementOperationView(View):
             return response_success(model_to_dict(element_operation))
 
     def post(self, request, element_operation_id, *args, **kwargs):
-        '''
+        """
         代表更改元素操作
         :param request:
+        :param element_operation_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         element_operation = UIElementsOperation.objects.filter(id=element_operation_id).first()
         if element_operation is None:
@@ -57,25 +59,26 @@ class UIElementOperationView(View):
             raise MyException()
 
     def delete(self, request, element_operation_id, *args, **kwargs):
-        '''
+        """
         代表删除单独元素操作
         :param request:
+        :param element_operation_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         UIElementsOperation.objects.filter(id=element_operation_id).delete()
         return response_success("删除元素操作成功")
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建元素操作
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:

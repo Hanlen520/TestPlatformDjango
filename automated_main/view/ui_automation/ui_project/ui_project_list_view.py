@@ -21,13 +21,13 @@ import arrow
 class UiProjectListView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表获取所有项目列表
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         data = request.GET
         size = int(data.get('size', 10))
@@ -36,15 +36,13 @@ class UiProjectListView(View):
         ui_project_list = []
 
         for ui_project in ui_projects:
-            _tz = 'Asia/Shanghai'
             project_dict = {
                 "id": ui_project.id,
                 "ui_project_name": ui_project.ui_project_name,
                 "describe": ui_project.describe,
-                "updata_time": arrow.get(ui_project.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(ui_project.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(ui_project.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(ui_project.create_time)).format('YYYY-MM-DD HH:mm:ss'),
             }
-            print(ui_project.create_time)
             ui_project_list.append(project_dict)
 
         return response_success(ui_project_list)

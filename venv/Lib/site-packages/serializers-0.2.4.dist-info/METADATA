@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: serializers
+Version: 0.2.4
+Summary: A minimal port of rails' ActiveModel Serializer
+Home-page: https://github.com/gaorlov/serializer
+Author: Greg Orlov
+Author-email: gaorlov@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/gaorlov/serializer/archive/0.2.4.tar.gz
+Keywords: serializer,serializing,serialization,json,active model serializer
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Utilities
+Requires-Dist: future
+
+UNKNOWN
+
+

@@ -36,13 +36,12 @@ class ApiModuleListView(View):
         api_module_list = []
 
         for api_modules in api_module:
-            _tz = 'Asia/Shanghai'
             api_module_dict = {
                 "id": api_modules.id,
                 "api_module_name": api_modules.ui_page_name,
                 "api_module_describe": api_modules.ui_page_describe,
-                "updata_time": arrow.get(api_modules.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(api_modules.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(api_modules.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(api_modules.create_time)).format('YYYY-MM-DD HH:mm:ss'),
                 "api_project_name": api_modules.ui_project.ui_project_name
             }
             api_module_list.append(api_module_dict)

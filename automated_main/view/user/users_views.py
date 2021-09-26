@@ -5,6 +5,7 @@
 # @Software: PyCharm
 from django.views.generic import View
 import json
+import arrow
 
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
@@ -17,16 +18,17 @@ from django.contrib.auth import authenticate, login, logout
 from automated_main.form.user import UserForm
 
 
+
 class UsersView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表登录
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         form = UserForm(request.GET)
         result = form.is_valid()
@@ -38,18 +40,24 @@ class UsersView(View):
         if user:
             # 登录持久化，生成session
             login(request, user)
-            return response_success("登录成功")
+
+            user_information = User.objects.get(username=user)
+
+            last_login_time = arrow.get(str(user_information.last_login)).format('YYYY-MM-DD HH:mm:ss')
+
+            return response_success({"message": "登录成功", "user_name": user_information.username, "last_login": last_login_time})
         else:
             raise MyException(message="登录失败")
 
     def post(self, request, *args, **kwargs):
-        '''
+        """
         代表的注册
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
+
         body = request.body
         data = json.loads(body)
 
@@ -62,7 +70,6 @@ class UsersView(View):
         if User.objects.filter(username=form.cleaned_data["username"]).exists():
             raise MyException(message="用户已存在")
 
-        # result = User.objects.create_user(username=data["username"], password=data["password"])
         user = User.objects.create_user(username=form.cleaned_data["username"], password=form.cleaned_data["password"])
 
         if user:
@@ -72,13 +79,15 @@ class UsersView(View):
             raise MyException(message="注册失败")
 
     def delete(self, request, *args, **kwargs):
-        '''
+        """
         代表的注销
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
         logout(request)
         return response_success("注销成功")
+
+
 

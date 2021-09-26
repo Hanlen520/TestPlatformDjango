@@ -20,13 +20,14 @@ from automated_main.form.api_module import ApiModuleForm
 class ApiModuleView(View):
 
     def get(self, request, api_module_id, *args, **kwargs):
-        '''
+        """
         代表获取单个API模块
         :param request:
+        :param api_module_id: API模块ID
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         api_module = APIModule.objects.filter(id=api_module_id).first()
 
@@ -36,13 +37,14 @@ class ApiModuleView(View):
             return response_success(model_to_dict(api_module))
 
     def post(self, request, api_module_id, *args, **kwargs):
-        '''
+        """
         代表更改页面
         :param request:
+        :param api_module_id: API模块ID
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
         api_module = APIModule.objects.filter(id=api_module_id).first()
         if api_module is None:
             return response_success()
@@ -60,25 +62,26 @@ class ApiModuleView(View):
             raise MyException()
 
     def delete(self, request, api_module_id, *args, **kwargs):
-        '''
+        """
         代表删除单独模块
         :param request:
+        :param api_module_id: API模块ID
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         APIModule.objects.filter(id=api_module_id).delete()
         return response_success("删除模块成功")
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建模块
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:
@@ -98,26 +101,26 @@ class ApiModuleView(View):
 class ApiProjectModuleView(View):
 
     def get(self, request, api_project_id, *args, **kwargs):
-        '''
+        """
         获取 单个API项目中包含得所有模块
         :param request:
-        :param api_project_id:api项目id
+        :param api_project_id: api项目id
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
+
         api_module = APIModule.objects.filter(api_project_id=api_project_id)
 
         api_module_list = []
         for api_modules in api_module:
-            _tz = 'Asia/Shanghai'
             api_module_dict = {
                 "id": api_modules.id,
                 "api_project_name": api_modules.api_project.api_project_name,
                 "api_module_name": api_modules.api_module_name,
                 "api_module_describe": api_modules.api_module_describe,
-                "updata_time": arrow.get(api_modules.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(api_modules.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(api_modules.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(api_modules.create_time)).format('YYYY-MM-DD HH:mm:ss'),
             }
             api_module_list.append(api_module_dict)
 

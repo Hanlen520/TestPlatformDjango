@@ -17,21 +17,24 @@ from automated_main.models.ui_automation.ui_element_operation import UIElementsO
 from automated_main.form.ui_test_case import UiTestCaseForm
 from selenium import webdriver
 from automated_main.view.ui_automation.ui_test_case.ui_automation import base
+import logging
+
+logger = logging.getLogger('django')
 
 
 class UITestCaseView(View):
 
     def get(self, request, ui_test_case_id, *args, **kwargs):
-        '''
+        """
         代表获取单个测试用例
         :param request:
+        :param ui_test_case_id:
         :param args:
         :param kwargs:
         :return:
-        '''
-        print(ui_test_case_id)
+        """
         ui_test_case = UITestCase.objects.get(id=ui_test_case_id)
-        ui_associated = UITestCaseAssociated.objects.filter(cid_id=ui_test_case_id).order_by("case_steps")
+        ui_associated = UITestCaseAssociated.objects.filter(cid_id=ui_test_case_id)
         if ui_test_case is None:
             return response_success()
         else:
@@ -47,11 +50,14 @@ class UITestCaseView(View):
                     "x_coordinates": ui_associateds.x_coordinates,
                     "y_coordinates": ui_associateds.y_coordinates,
                     "waiting_time": ui_associateds.waiting_time,
-                    "steps": ui_associateds.case_steps,
+                    "steps": int(ui_associateds.case_steps),
                 }
                 ui_test_case_data_list.append(ui_associated_dict)
+            ui_test_case_data_list_sorting = sorted(ui_test_case_data_list, key=lambda x: x['steps'])
 
-            return response_success({"ui_test_case_name": ui_test_case.ui_test_case_name, "ui_project_id": ui_test_case.ui_project_id, "ui_test_case_data": ui_test_case_data_list})
+            return response_success(
+                {"ui_test_case_name": ui_test_case.ui_test_case_name, "ui_project_id": ui_test_case.ui_project_id,
+                 "ui_test_case_data": ui_test_case_data_list_sorting})
 
     def post(self, request, ui_test_case_id, *args, **kwargs):
         """
@@ -70,8 +76,23 @@ class UITestCaseView(View):
         if not body:
             return response_success()
         data = json.loads(body)
-        print(data)
         form = UiTestCaseForm(data)
+
+        for i in data["ui_test_case_data"]:
+            ui_page_elements_id = (i['ui_page_element_id'])
+            elements_operation = (i['ui_element_operation_id'])
+            waiting_time = (i['waiting_time'])
+            case_steps = (i['steps'])
+
+            if elements_operation == "":
+                return response_failed(30000, "元素操作未选择")
+
+            if ui_page_elements_id == "":
+                return response_failed(30000, "UI页面元素未选择")
+            if case_steps == "":
+                return response_failed(30000, "操作步骤未填写")
+            if waiting_time == "":
+                return response_failed(30000, "等待时间未填写")
 
         ui_test_case.ui_test_case_name = data['ui_test_case_name']
         ui_test_case.ui_project_id = data['ui_project_id']
@@ -85,7 +106,6 @@ class UITestCaseView(View):
                 elements_operation = (i['ui_element_operation_id'])
                 waiting_time = (i['waiting_time'])
                 case_steps = (i['steps'])
-
                 page_elements_output = (i['elements_output'])
                 x_coordinates = (i['x_coordinates'])
                 y_coordinates = (i['y_coordinates'])
@@ -129,9 +149,9 @@ class UITestCaseView(View):
         if form.is_valid():
             ui_test_case = UITestCase.objects.create(**form.cleaned_data)
             ui_test_case_id = ui_test_case.id
+            print(data["ui_test_case_data"])
 
             for i in data["ui_test_case_data"]:
-                print(i)
                 ui_page_element_id = (i['ui_page_element_id'])
                 elements_operation = (i['ui_element_operation_id'])
                 waiting_time = (i['waiting_time'])
@@ -139,11 +159,22 @@ class UITestCaseView(View):
                 page_elements_output = (i['elements_output'])
                 x_coordinates = (i['x_coordinates'])
                 y_coordinates = (i['y_coordinates'])
+                if elements_operation == "":
+                    ui_test_case.delete()
+                    return response_failed(30000, "元素操作未选择")
 
+                if ui_page_element_id == "":
+                    ui_test_case.delete()
+                    return response_failed(30000, "UI页面元素未选择")
+                if case_steps == "":
+                    ui_test_case.delete()
+                    return response_failed(30000, "操作步骤未填写")
+                if waiting_time == "":
+                    ui_test_case.delete()
+                    return response_failed(30000, "等待时间未填写")
                 UITestCaseAssociated.objects.create(cid_id=ui_test_case_id, element_operation=elements_operation,
                                                     element_input=page_elements_output, waiting_time=waiting_time,
-                                                    case_steps=case_steps, ui_page_elements_id=
-                                                    ui_page_element_id,
+                                                    case_steps=case_steps, ui_page_elements_id=ui_page_element_id,
                                                     x_coordinates=x_coordinates, y_coordinates=y_coordinates)
 
             return response_success("创建UI测试用例成功")
@@ -154,13 +185,13 @@ class UITestCaseView(View):
 class GetUiTestCaseSelectData(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         三级联动---“UI项目>UI页面>UI页面元素”
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
         ui_projects = UIProject.objects.all()
         data_list = []
         for project in ui_projects:
@@ -181,8 +212,6 @@ class GetUiTestCaseSelectData(View):
 
                     })
 
-                print(ui_page_element_list)
-
                 page_list.append({
                     "ui_page_id": ui_page.id,
                     "ui_page_name": ui_page.ui_page_name,
@@ -192,7 +221,6 @@ class GetUiTestCaseSelectData(View):
             project_dict["page_list"] = page_list
 
             data_list.append(project_dict)
-            print(data_list)
 
         return response_success(data_list)
 
@@ -200,30 +228,34 @@ class GetUiTestCaseSelectData(View):
 class UiTestCaseDeBug(View):
 
     def post(self, request, *args, **kwargs):
-        '''
+        """
         UI测试用例得调试
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
+
+        debug_results = ""
+        debug_results_message = ""
 
         data = request.body
         ui_case_data = json.loads(data)
-        print(ui_case_data)
 
+        logger.info(ui_case_data)
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('headless')
         chrome_options.add_argument('no-sandbox')
         driver = webdriver.Chrome(options=chrome_options)
+        # driver = webdriver.Chrome()
         bases = base.BaseCommon(driver)
 
         for i in ui_case_data["ui_test_case_data"]:
-            print(i)
             ui_page_id = (i['ui_page_id'])
             ui_elements_id = (i['ui_page_element_id'])
             elements_operation_id = (i['ui_element_operation_id'])
             waiting_time = (i['waiting_time'])
+            steps = (i['steps'])
             try:
                 page_elements_output = (i['elements_output'])
                 x_coordinates = (i['x_coordinates'])
@@ -231,72 +263,106 @@ class UiTestCaseDeBug(View):
             except Exception as e:
                 pass
             elements_operation = UIElementsOperation.objects.get(id=elements_operation_id)
-
-
             page_element = UIPageElement.objects.get(id=ui_elements_id)
+            print(len(page_element.ui_page_element_more))
+            # if len(page_element.ui_page_element_more) == 0:
+            #     print("zheshikong ")
 
-            if elements_operation.elements_operation_name == "open_url":
-                bases.open_url(page_element.ui_page_element)
-                driver.maximize_window()
-                time.sleep(int(waiting_time))
+            try:
+                if elements_operation.elements_operation_name == "open_url":
+                    bases.open_url(page_element.ui_page_element)
+                    driver.maximize_window()
+                    time.sleep(int(waiting_time))
+                    logger.info("打开url" + str(page_element.ui_page_element))
 
-            if elements_operation.elements_operation_name == "send_keys":
-                # print(page_elements_output)
+                if elements_operation.elements_operation_name == "send_keys":
+                    bases.send_keys(page_element.ui_element_positioning.locating_method, page_element.ui_page_element,
+                                    page_elements_output, int(page_element.ui_page_element_more))
+                    time.sleep(int(waiting_time))
+                    logger.info("元素输入操作：" + str(page_element.ui_page_element_name))
 
-                bases.send_keys(page_element.ui_element_positioning.locating_method, page_element.ui_page_element, page_elements_output)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "click":
+                    bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element, int(page_element.ui_page_element_more))
+                    time.sleep(int(waiting_time))
+                    logger.info("元素点击操作：" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "click":
-                bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "double_click":
+                    bases.double_click(page_element.ui_element_positioning.locating_method,
+                                       page_element.ui_page_element)
+                    time.sleep(int(waiting_time))
+                    logger.info("元素双击操作：" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "double_click":
-                bases.double_click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "ifram":
+                    bases.switch_frame(page_element.ui_page_element)
+                    time.sleep(int(waiting_time))
+                    logger.info("进入ifram：" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "ifram":
-                bases.switch_frame(page_element.ui_page_element)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "switch_to_alert":
+                    bases.switch_to_alert(page_element.ui_element_positioning.locating_method,
+                                          page_element.ui_page_element)
+                    time.sleep(int(waiting_time))
+                    logger.info("切换alert窗口：" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "switch_to_alert":
-                bases.switch_to_alert(page_element.ui_element_positioning.locating_method, page_element.ui_page_element)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "click_and_hold":
+                    bases.click_and_hold(page_element.ui_element_positioning.locating_method,
+                                         page_element.ui_page_element)
+                    time.sleep(int(waiting_time))
+                    logger.info("鼠标长按左键：" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "click_and_hold":
-                bases.click_and_hold(page_element.ui_element_positioning.locating_method, page_element.ui_page_element)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "get_page_title":
+                    bases.get_page_title()
+                    time.sleep(int(waiting_time))
+                    logger.info("获取网页Title:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "get_page_title":
-                bases.get_page_title()
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "set_timeout":
+                    bases.set_timeout()
+                    time.sleep(int(waiting_time))
+                    logger.info("设置超时时间:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "set_timeout":
-                bases.set_timeout()
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "drag_and_drop":
+                    bases.drag_and_drop(page_element.ui_element_positioning.locating_method,
+                                        page_element.ui_page_element, x_coordinates, y_coordinates)
+                    time.sleep(int(waiting_time))
+                    logger.info("拖拽元素:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "drag_and_drop":
-                bases.drag_and_drop(page_element.ui_element_positioning.locating_method, page_element.ui_page_element, x_coordinates, y_coordinates)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "script":
+                    bases.script(page_element.ui_element_positioning.locating_method, page_element.ui_page_element,
+                                 x_coordinates, y_coordinates)
+                    time.sleep(int(waiting_time))
+                    logger.info("滑动滚动条:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "script":
-                bases.script(page_element.ui_element_positioning.locating_method, page_element.ui_page_element, x_coordinates, y_coordinates)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "mouse_suspension":
+                    bases.mouse_suspension(page_element.ui_element_positioning.locating_method,
+                                           page_element.ui_page_element)
+                    time.sleep(int(waiting_time))
+                    logger.info("鼠标悬浮:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "mouse_suspension":
-                bases.mouse_suspension(page_element.ui_element_positioning.locating_method, page_element.ui_page_element)
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "change_window_handle":
+                    bases.change_window_handle()
+                    time.sleep(int(waiting_time))
+                    logger.info("切换窗口:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "change_window_handle":
-                bases.change_window_handle()
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "copy":
+                    bases.copy()
+                    time.sleep(int(waiting_time))
+                    logger.info("复制粘贴:" + str(page_element.ui_page_element_name))
 
-            if elements_operation.elements_operation_name == "copy":
-                bases.copy()
-                time.sleep(int(waiting_time))
+                if elements_operation.elements_operation_name == "keyboard_clear_contents":
+                    bases.keyboard_clear_contents(page_element.ui_element_positioning.locating_method,
+                                                  page_elements_output)
+                    time.sleep(int(waiting_time))
+                    logger.info("利用键盘清空输入框内容:" + str(page_element.ui_page_element_name))
+            except Exception as e:
+                logger.info("这是错误的步骤: " + str(steps))
+                logger.info("这是异常信息: " + str(e))
 
-            if elements_operation.elements_operation_name == "keyboard_clear_contents":
-                bases.keyboard_clear_contents(page_element.ui_element_positioning.locating_method, page_elements_output)
-                time.sleep(int(waiting_time))
-
+                debug_results = "这是错误的步骤: " + str(steps)
+                debug_results_message = "这是异常信息: " + str(e)
+                driver.quit()
+                return response_failed(3000, {"debug_results": debug_results,
+                                              "debug_results_message": debug_results_message}
+                                       )
         driver.quit()
-        return response_success(ui_case_data)
+
+        return response_success({"debug_results": debug_results,
+                                 "debug_results_message": debug_results_message})

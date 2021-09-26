@@ -19,13 +19,14 @@ import datetime
 class UIPositioningView(View):
 
     def get(self, request, element_positioning_id, *args, **kwargs):
-        '''
+        """
         代表获取单个元素定位
         :param request:
+        :param element_positioning_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         element_operation = UIPositioning.objects.filter(id=element_positioning_id).first()
         if element_operation is None:
@@ -34,13 +35,13 @@ class UIPositioningView(View):
             return response_success(model_to_dict(element_operation))
 
     def post(self, request, element_positioning_id, *args, **kwargs):
-        '''
-        代表更改元素定位
+        """
         :param request:
+        :param element_positioning_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         element_positioning = UIPositioning.objects.filter(id=element_positioning_id).first()
         if element_positioning is None:
@@ -53,33 +54,32 @@ class UIPositioningView(View):
         form = UiPositioningForm(data)
 
         if form.is_valid():
-            # UIProject.objects.filter(id=ui_project_id).update(ui_project_name=form.cleaned_data["ui_project_name"],
-            #                                                   describe=form.cleaned_data["describe"])
             UIPositioning.objects.filter(id=element_positioning_id).update(**form.cleaned_data)
             return response_success("编辑UI项目成功")
         else:
             raise MyException()
 
     def delete(self, request, element_positioning_id, *args, **kwargs):
-        '''
+        """
         代表删除单独元素定位
         :param request:
+        :param element_positioning_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         UIPositioning.objects.filter(id=element_positioning_id).delete()
         return response_success("删除元素定位成功")
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建元素定位
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:
@@ -89,21 +89,20 @@ class UIPositioningView(View):
         form = UiPositioningForm(data)
 
         if form.is_valid():
-            # UIProject.objects.filter(id=ui_project_id).update(ui_project_name=form.cleaned_data["ui_project_name"],
-            #                                                   describe=form.cleaned_data["describe"])
             UIPositioning.objects.create(**form.cleaned_data)
             return response_success("创建元素定位成功")
         else:
             raise MyException()
 
     def post(self, request, element_positioning_id, *args, **kwargs):
-        '''
+        """
         代表编辑元素定位
         :param request:
+        :param element_positioning_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         element_operation = UIPositioning.objects.filter(id=element_positioning_id).first()
         if element_operation is None:
@@ -116,7 +115,6 @@ class UIPositioningView(View):
         data = json.loads(body)
 
         form = UiPositioningForm(data)
-        print(form)
         if form.is_valid():
             UIPositioning.objects.filter(id=element_positioning_id).update(**form.cleaned_data, updata_time=datetime.datetime.now())
             return response_success("编辑元素定位成功")

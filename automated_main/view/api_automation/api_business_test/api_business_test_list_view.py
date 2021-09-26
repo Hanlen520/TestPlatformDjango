@@ -4,7 +4,7 @@
 # @FileName: api_business_test_list_view.py
 # @Software: PyCharm
 from django.views.generic import View
-from automated_main.utils.http_format import response_success, response_failed
+from automated_main.utils.http_format import response_success
 from automated_main.models.api_automation.api_business_test import ApiBusinessTest
 import arrow
 
@@ -25,14 +25,13 @@ class ApiBusinessTestListView(View):
         api_business_case_list = []
 
         for api_business_cases in api_business_case:
-            _tz = 'Asia/Shanghai'
             ui_test_cases_dict = {
                 "id": api_business_cases.id,
                 "api_business_test_name": api_business_cases.api_business_test_name,
                 "api_project_id": api_business_cases.api_project.id,
                 "api_project_name": api_business_cases.api_project.api_project_name,
-                "updata_time": arrow.get(api_business_cases.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(api_business_cases.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss')
+                "update_time": arrow.get(str(api_business_cases.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(api_business_cases.create_time)).format('YYYY-MM-DD HH:mm:ss')
             }
             api_business_case_list.append(ui_test_cases_dict)
 

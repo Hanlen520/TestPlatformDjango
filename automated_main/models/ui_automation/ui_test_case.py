@@ -28,13 +28,13 @@ class UITestCaseAssociated(models.Model):
     UI测试用例关联表
     """
     cid = models.ForeignKey(UITestCase, on_delete=models.CASCADE)
-    ui_page_elements = models.ForeignKey(UIPageElement, on_delete=models.CASCADE)
+    ui_page_elements = models.ForeignKey(UIPageElement, on_delete=models.CASCADE, null=True)
     element_operation = models.CharField("元素操作", max_length=100, null=False)
     element_input = models.CharField("元素输出", max_length=100, null=True, blank=True)
     x_coordinates = models.CharField("X坐标", max_length=100, null=True, blank=True)
     y_coordinates = models.CharField("Y坐标", max_length=100, null=True, blank=True)
-    waiting_time = models.CharField("等待时间", max_length=100, null=False)
-    case_steps = models.CharField("操作步骤", max_length=100, null=False)
+    waiting_time = models.CharField("等待时间", max_length=100, null=True)
+    case_steps = models.CharField("操作步骤", max_length=100, null=True)
     updata_time = models.DateTimeField(auto_now_add=True)
     create_time = models.DateTimeField("创建时间", auto_now_add=True)
 

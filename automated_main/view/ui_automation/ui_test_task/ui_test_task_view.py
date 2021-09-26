@@ -8,13 +8,20 @@ import json
 from django.forms import model_to_dict
 from automated_main.utils.http_format import response_success, response_failed
 from automated_main.exception.my_exception import MyException
-from automated_main.models.ui_automation.ui_test_task import UITestTask, UITestResult
+from automated_main.models.ui_automation.ui_test_task import UITestTask, UITestResult, UITestResultAssociated
 from automated_main.models.ui_automation.ui_project import UIProject
 from automated_main.models.ui_automation.ui_test_case import UITestCase
 from automated_main.form.ui_test_task import UiTestTaskForm
 from automated_main.view.ui_automation.ui_test_task.extend.task_thread import TaskThread
-# import serializers
-from django.core import serializers
+import arrow
+from django.http import FileResponse
+import os
+from AutomatedTestPlatform import settings
+import logging
+
+logger = logging.getLogger('django')
+
+from functools import reduce
 
 
 class UITestTaskView(View):
@@ -28,7 +35,6 @@ class UITestTaskView(View):
         :param kwargs:
         :return:
         """
-        print(ui_test_task_id)
         ui_test_task = UITestTask.objects.get(id=ui_test_task_id)
         return response_success(model_to_dict(ui_test_task))
 
@@ -82,15 +88,11 @@ class UITestTaskView(View):
         if not body:
             return response_success()
         data = json.loads(body)
-        print(data)
 
         form = UiTestTaskForm(data)
-        print(data['ui_test_task_id'])
 
         if form.is_valid():
-            print(data)
             if data['ui_test_task_id'] == 0:
-                print(data)
                 UITestTask.objects.create(**form.cleaned_data)
                 return response_success("创建UI测试任务成功")
             else:
@@ -204,10 +206,8 @@ class PerformUiTask(View):
 
         # 2. 修改任务的状态为：1-执行中
         task = UITestTask.objects.get(id=ui_test_task_id)
-        print("第一次", task.status)
         task.status = 1
         task.save()
-        print("第二次", task.status)
 
         # 通过多线程运行测试任务
         TaskThread(ui_test_task_id).run()
@@ -233,17 +233,35 @@ class CheckResultList(View):
             result = {
                 "id": i.id,
                 "ui_test_result_name": i.ui_test_result_name,
-                "error": i.error,
-                "failure": i.failure,
-                "skipped": i.skipped,
-                "tests": i.tests,
-                "run_time": i.run_time,
-                "successful": i.successful,
-                "result": i.result,
-                "create_time": i.create_time
+                "ui_error_total_number": i.ui_error_total_number,
+                "ui_total_number": i.ui_total_number,
+                "ui_successful_total_number": i.ui_successful_total_number,
+                "ui_test_script": i.ui_test_script,
+                "create_time": arrow.get(str(i.create_time, )).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(i.updata_time)).format('YYYY-MM-DD HH:mm:ss')
             }
             data.append(result)
         return response_success({'status': 10102, 'data': data})
+
+    def delete(self, request, ui_test_task_id, ui_test_result_id, *args, **kwargs):
+        """
+        删除单独测试报告列表
+        :param ui_test_result_id:
+        :param request:
+        :param ui_test_task_id:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        if ui_test_task_id == "":
+            return response_failed({"status": 10102, "message": "ui_test_task_id不能为空"})
+
+        if ui_test_result_id == "":
+            return response_failed({"status": 10102, "message": "ui_test_result_id不能为空"})
+
+        UITestResult.objects.get(ui_task_id=ui_test_task_id, id=ui_test_result_id).delete()
+
+        return response_success("删除UI测试任务成功")
 
 
 class CheckResult(View):
@@ -258,14 +276,117 @@ class CheckResult(View):
         """
         if ui_test_result_id == "":
             return response_failed({"status": 10102, "message": "ui_test_task_id不能为空"})
-        r = UITestResult.objects.filter(id=ui_test_result_id)
-        data = []
-        for i in r:
-            result = {
-                "id": i.id,
-                "ui_test_result_name": i.ui_test_result_name,
-                "result": i.result,
-                "create_time": i.create_time
+        ui_result = UITestResultAssociated.objects.filter(ui_result_id=ui_test_result_id)
+
+        single_case_results = []
+
+        for single_case in ui_result:
+            single_case_dict = {
+                "id": single_case.id,
+                "ui_test_case_name": single_case.ui_test_case_name,
+                "ui_error": single_case.ui_error,
+                "ui_successful": single_case.ui_successful,
             }
-            data.append(result)
-        return response_success({'status': 10102, 'data': data})
+            single_case_results.append(single_case_dict)
+
+        ui_error_case_list = []
+
+        for ui_error_case in single_case_results:
+            if int(ui_error_case['ui_error']) == int(1):
+                ui_error_case_list.append(ui_error_case)
+
+        for remove_case in ui_error_case_list:
+            i = 0
+            while i < len(single_case_results):
+                if remove_case['ui_test_case_name'] == single_case_results[i]["ui_test_case_name"] and int(single_case_results[i]['ui_error']) == int(0):
+                    single_case_results.pop(i)
+                    i -= 1
+
+                i += 1
+
+        # 用于存储去重后的list-最终获取数据
+        new_data = []
+
+        # 用于存储当前已有的值
+        values = []
+        for d in single_case_results:
+            if d["ui_test_case_name"] not in values:
+                new_data.append(d)
+                values.append(d["ui_test_case_name"])
+
+        ui_total_number = len(new_data)
+
+        ui_error_total_number = UITestResultAssociated.objects.filter(ui_result_id=ui_test_result_id,
+                                                                      ui_error=1).count()
+
+        ui_successful_total_number = ui_total_number - ui_error_total_number
+        case_result_total = [ui_successful_total_number, ui_error_total_number]
+
+        return response_success({'status': 10102, "case_result_total": case_result_total, "data": new_data})
+
+    def get(self, request, ui_test_abnormal_result_id, *args, **kwargs):
+        """
+        获取异常测试报告
+        :param request:
+        :param ui_test_abnormal_result_id:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        if ui_test_abnormal_result_id == "":
+            return response_failed({"status": 10102, "message": "ui_test_abnormal_result_id不能为空"})
+        ui_test_abnormal = UITestResultAssociated.objects.get(id=ui_test_abnormal_result_id)
+
+        return response_success({"ui_test_abnormal": ui_test_abnormal.abnormal})
+
+
+class DownloadWebScript(View):
+
+    def get(self, request, ui_test_result_id, *args, **kwargs):
+        """
+        下载web自动化脚本
+        :param request:
+        :param ui_test_result_id:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        if ui_test_result_id == "":
+            return response_failed({"status": 10102, "message": "ui_test_abnormal_result_id不能为空"})
+        ui_test_result = UITestResult.objects.get(id=ui_test_result_id)
+
+        ENV_PROFILE = os.getenv("ENV")
+        if ENV_PROFILE == "SERVER":
+            file = open('/home/Web_Script/' + str(ui_test_result.ui_test_script), 'rb')
+        elif ENV_PROFILE == "1":
+            file = open(os.path.join(settings.WEB_ROOT, str(ui_test_result.ui_test_script)), 'rb')
+
+        response = FileResponse(file)
+        response['Content-Type'] = 'application/octet-stream'
+        response['Content-Disposition'] = 'attachment;' + ' filename=' + str(ui_test_result.ui_test_script)
+        return response
+
+
+class DownloadWebScriptTemplate(View):
+
+    def get(self, request, *args, **kwargs):
+        """
+        下载web自动化脚本模板
+        :param request:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        print(settings.WEB_TEMPLATE)
+        logger.info("web脚本地址：" + settings.WEB_TEMPLATE)
+        file = open(settings.WEB_TEMPLATE, 'rb')
+
+        response = FileResponse(file)
+        response['Content-Type'] = 'application/octet-stream'
+        response['Content-Disposition'] = 'attachment;' + ' filename=' + "TestScriptTemplate.py"
+        return response
+
+
+
+
+

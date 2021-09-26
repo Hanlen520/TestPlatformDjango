@@ -20,17 +20,15 @@ class ApiTestCaseListView(View):
         :return:
         """
         api_test_cases = ApiTestCase.objects.filter(api_module=api_module_id)
-        print(api_test_cases)
         api_test_case_list = []
 
         for api_test_case in api_test_cases:
-            _tz = 'Asia/Shanghai'
             api_test_case_dict = {
                 "id": api_test_case.id,
                 "api_module_name": api_test_case.api_module.api_module_name,
                 "api_test_case_name": api_test_case.api_test_case_name,
-                "updata_time": arrow.get(api_test_case.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(api_test_case.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(api_test_case.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(api_test_case.create_time)).format('YYYY-MM-DD HH:mm:ss'),
             }
 
             api_test_case_list.append(api_test_case_dict)

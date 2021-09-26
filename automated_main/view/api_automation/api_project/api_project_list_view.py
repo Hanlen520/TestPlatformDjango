@@ -12,13 +12,13 @@ import arrow
 class ApiProjectListView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
-        代表获取所有api项目列表
+        """
+        代表获取所有API测试项目列表
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         data = request.GET
         size = int(data.get('size', 10))
@@ -27,15 +27,13 @@ class ApiProjectListView(View):
         api_project_list = []
 
         for api_project in api_projects:
-            _tz = 'Asia/Shanghai'
             api_project_dict = {
                 "id": api_project.id,
                 "api_project_name": api_project.api_project_name,
                 "describe": api_project.describe,
-                "updata_time": arrow.get(api_project.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(api_project.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(api_project.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(api_project.create_time)).format('YYYY-MM-DD HH:mm:ss'),
             }
-            print(api_project.create_time)
             api_project_list.append(api_project_dict)
 
         return response_success(api_project_list)

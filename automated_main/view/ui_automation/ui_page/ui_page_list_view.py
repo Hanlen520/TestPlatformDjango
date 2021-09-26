@@ -21,13 +21,13 @@ import arrow
 class UiPageListView(View):
 
     def get(self, request, *args, **kwargs):
-        '''
+        """
         代表获取所有UI页面列表
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         data = request.GET
         size = int(data.get('size', 10))
@@ -36,13 +36,12 @@ class UiPageListView(View):
         ui_page_list = []
 
         for ui_pages in ui_page:
-            _tz = 'Asia/Shanghai'
             page_dict = {
                 "id": ui_pages.id,
                 "ui_page_name": ui_pages.ui_page_name,
                 "ui_page_describe": ui_pages.ui_page_describe,
-                "updata_time": arrow.get(ui_pages.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(ui_pages.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(ui_pages.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(ui_pages.create_time)).format('YYYY-MM-DD HH:mm:ss'),
                 "ui_project_name": ui_pages.ui_project.ui_project_name
             }
             ui_page_list.append(page_dict)

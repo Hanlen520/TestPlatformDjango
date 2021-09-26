@@ -19,13 +19,14 @@ from automated_main.form.ui_page import UiPageForm
 class UiPageView(View):
 
     def get(self, request, ui_page_id, *args, **kwargs):
-        '''
+        """
         代表获取单个UI页面
         :param request:
+        :param ui_page_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         ui_page = UIPage.objects.filter(id=ui_page_id).first()
 
@@ -35,13 +36,14 @@ class UiPageView(View):
             return response_success(model_to_dict(ui_page))
 
     def post(self, request, ui_page_id, *args, **kwargs):
-        '''
+        """
         代表更改页面
         :param request:
+        :param ui_page_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
         ui_page = UIPage.objects.filter(id=ui_page_id).first()
         if ui_page is None:
             return response_success()
@@ -59,25 +61,26 @@ class UiPageView(View):
             raise MyException()
 
     def delete(self, request, ui_page_id, *args, **kwargs):
-        '''
+        """
         代表删除单独页面
         :param request:
+        :param ui_page_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         UIPage.objects.filter(id=ui_page_id).delete()
         return response_success("删除页面成功")
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建页面
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:
@@ -87,8 +90,6 @@ class UiPageView(View):
         form = UiPageForm(data)
 
         if form.is_valid():
-            # UIProject.objects.filter(id=ui_project_id).update(ui_project_name=form.cleaned_data["ui_project_name"],
-            #                                                   describe=form.cleaned_data["describe"])
             UIPage.objects.create(**form.cleaned_data)
             return response_success("创建成功")
         else:
@@ -98,26 +99,25 @@ class UiPageView(View):
 class UiProjectPageView(View):
 
     def get(self, request, ui_project_id, *args, **kwargs):
-        '''
+        """
         获取 单个UI项目中包含得所有页面
         :param request:
         :param ui_project_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
         ui_page = UIPage.objects.filter(ui_project_id=ui_project_id)
 
         ui_page_list = []
         for pages in ui_page:
-            _tz = 'Asia/Shanghai'
             page_dict = {
                 "id": pages.id,
                 "ui_project_name": pages.ui_project.ui_project_name,
                 "ui_page_name": pages.ui_page_name,
                 "ui_page_describe": pages.ui_page_describe,
-                "updata_time": arrow.get(pages.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(pages.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(pages.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(pages.create_time)).format('YYYY-MM-DD HH:mm:ss'),
             }
             ui_page_list.append(page_dict)
 

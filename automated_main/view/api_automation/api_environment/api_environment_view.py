@@ -15,13 +15,14 @@ from automated_main.form.api_environment import ApiEnvironmentForm
 class ApiEnvironmentView(View):
 
     def get(self, request, api_environment_id, *args, **kwargs):
-        '''
+        """
         代表获取单个API环境
         :param request:
+        :param api_environment_id:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         api_environment = APIEnvironment.objects.filter(id=api_environment_id).first()
 
@@ -55,25 +56,26 @@ class ApiEnvironmentView(View):
             raise MyException()
 
     def delete(self, request, api_environment_id, *args, **kwargs):
-        '''
+        """
         代表删除单独API环境
         :param request:
+        :param api_environment_id: API环境ID
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         APIEnvironment.objects.filter(id=api_environment_id).delete()
         return response_success("删除API环境成功")
 
     def put(self, request, *args, **kwargs):
-        '''
+        """
         代表创建API环境
         :param request:
         :param args:
         :param kwargs:
         :return:
-        '''
+        """
 
         body = request.body
         if not body:

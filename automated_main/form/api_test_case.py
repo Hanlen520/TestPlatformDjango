@@ -15,6 +15,7 @@ class ApiTestCaseForm(forms.Form):
                                                          'min_length': "API测试用例名称不能少于2个字符",
                                                          }
                                          )
+    api_documentation = forms.CharField(required=False)
 
     api_module_id = forms.CharField(required=False)
 
@@ -34,10 +35,5 @@ class ApiTestCaseForm(forms.Form):
 
     api_assert_text = forms.CharField(required=False)
 
-    api_variable_results = forms.CharField(required=False)
-
-    api_value_variable = forms.CharField(required=False)
-
-    api_key_variable = forms.CharField(required=False)
 
 

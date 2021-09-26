@@ -24,14 +24,13 @@ class ApiEnvironmentListView(View):
         api_environment_list = []
 
         for api_environments in api_environment:
-            _tz = 'Asia/Shanghai'
             api_environment_dict = {
                 "id": api_environments.id,
                 "api_environment_name": api_environments.api_environment_name,
                 "api_title": api_environments.api_title,
                 "api_environment_describe": api_environments.api_environment_describe,
-                "updata_time": arrow.get(api_environments.updata_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
-                "create_time": arrow.get(api_environments.create_time).to(_tz).format('YYYY-MM-DD HH:mm:ss'),
+                "updata_time": arrow.get(str(api_environments.updata_time)).format('YYYY-MM-DD HH:mm:ss'),
+                "create_time": arrow.get(str(api_environments.create_time)).format('YYYY-MM-DD HH:mm:ss'),
 
             }
             api_environment_list.append(api_environment_dict)

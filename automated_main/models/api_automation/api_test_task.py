@@ -54,6 +54,9 @@ class APITestResultAssociated(models.Model):
     api_variable_results = models.TextField("参数提取", max_length=5000, null=True, blank=True)
     api_request_results = models.JSONField("API请求结果", null=True, default=None)
     api_business_test_name = models.TextField("API业务测试名称", max_length=5000, null=True, blank=True)
+    api_header = models.TextField("header", max_length=5000, null=True, blank=True)
+    api_url = models.TextField("请求地址", max_length=5000, null=True, blank=True)
+    api_body = models.TextField("body", max_length=5000, null=True, blank=True)
     updata_time = models.DateTimeField(auto_now_add=True)
     create_time = models.DateTimeField("创建时间", auto_now_add=True)
 
