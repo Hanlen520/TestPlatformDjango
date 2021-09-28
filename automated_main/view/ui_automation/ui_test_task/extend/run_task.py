@@ -81,6 +81,11 @@ class InterfaceTest(unittest.TestCase):
             elements_operation = UIElementsOperation.objects.get(id=elements_operation_id)
 
             page_element = UIPageElement.objects.get(id=ui_elements_id)
+            element_more = None
+            if page_element.ui_page_element_more == "" or page_element.ui_page_element_more is None:
+                element_more = None
+            else:
+                element_more = int(page_element.ui_page_element_more)
 
             try:
 
@@ -98,7 +103,7 @@ class InterfaceTest(unittest.TestCase):
                 # 输入
                 if elements_operation.elements_operation_name == "send_keys":
                     self.bases.send_keys(page_element.ui_element_positioning.locating_method,
-                                         page_element.ui_page_element.replace('"', "'"), element_input)
+                                         page_element.ui_page_element.replace('"', "'"), element_input, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("元素输入操作：" + str(page_element.ui_page_element_name))
 
@@ -109,7 +114,7 @@ class InterfaceTest(unittest.TestCase):
 
                 # 点击
                 if elements_operation.elements_operation_name == "click":
-                    self.bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element.replace('"', "'"))
+                    self.bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element.replace('"', "'"), element_more)
                     time.sleep(int(waiting_time))
                     logger.info("元素点击操作：" + str(page_element.ui_page_element_name))
 
@@ -121,7 +126,7 @@ class InterfaceTest(unittest.TestCase):
                 # 双击
                 if elements_operation.elements_operation_name == "double_click":
                     self.bases.double_click(page_element.ui_element_positioning.locating_method,
-                                            page_element.ui_page_element)
+                                            page_element.ui_page_element, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("元素双击操作：" + str(page_element.ui_page_element_name))
 
@@ -169,7 +174,7 @@ class InterfaceTest(unittest.TestCase):
                 # send_key输入,可上传图片
                 if elements_operation.elements_operation_name == "send_key":
                     self.bases.send_key(page_element.ui_element_positioning.locating_method,
-                                        page_element.ui_page_element.replace('"', "'"), element_input)
+                                        page_element.ui_page_element.replace('"', "'"), element_input, element_more)
                     time.sleep(int(waiting_time))
 
                     with open(filename, "a") as f_write:
@@ -201,7 +206,7 @@ class InterfaceTest(unittest.TestCase):
                 # 鼠标长按左键
                 if elements_operation.elements_operation_name == "click_and_hold":
                     self.bases.click_and_hold(page_element.ui_element_positioning.locating_method,
-                                              page_element.ui_page_element.replace('"', "'"))
+                                              page_element.ui_page_element.replace('"', "'"), element_more)
                     time.sleep(int(waiting_time))
 
                     with open(filename, "a") as f_write:
@@ -242,7 +247,7 @@ class InterfaceTest(unittest.TestCase):
                 # 拖拽元素
                 if elements_operation.elements_operation_name == "drag_and_drop":
                     self.bases.drag_and_drop(page_element.ui_element_positioning.locating_method,
-                                             page_element.ui_page_element.replace('"', "'"))
+                                             page_element.ui_page_element.replace('"', "'"), element_more)
                     time.sleep(int(waiting_time))
 
                     with open(filename, "a") as f_write:
@@ -253,7 +258,7 @@ class InterfaceTest(unittest.TestCase):
                 # 滑动滚动条
                 if elements_operation.elements_operation_name == "script":
                     self.bases.script(page_element.ui_element_positioning.locating_method, page_element.ui_page_element.replace('"', "'"),
-                                      x_coordinates, y_coordinates)
+                                      x_coordinates, y_coordinates, element_more)
                     time.sleep(int(waiting_time))
 
                     with open(filename, "a") as f_write:
@@ -275,7 +280,7 @@ class InterfaceTest(unittest.TestCase):
                 # 鼠标悬浮
                 if elements_operation.elements_operation_name == "mouse_suspension":
                     self.bases.mouse_suspension(page_element.ui_element_positioning.locating_method,
-                                                page_element.ui_page_element.replace('"', "'"))
+                                                page_element.ui_page_element.replace('"', "'"), element_more)
                     time.sleep(int(waiting_time))
 
                     with open(filename, "a") as f_write:

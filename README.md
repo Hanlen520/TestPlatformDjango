@@ -1,4 +1,9 @@
+# 前端VUE：
+    Github地址：https://github.com/wangyinghaotest/VueAutomatedTestPlatform
 # TestPlatformDjango
+    先添加系统的环境变量 ENV=1 用来区别本地环境以及线上环境
+    测试环境：ENV=1
+    生产环境：ENV=SERVER
 
 # 根据数据库迁移文件生成对应SQL语句并执行
     python manage.py migrate

@@ -1,0 +1,6 @@
+self.bases.open_url("https://www.baidu.com/") 
+time.sleep(1) 
+self.bases.send_keys("xpath","//*[@id='kw']","aaa") 
+time.sleep(5) 
+self.bases.click("id","su") 
+time.sleep(2) 

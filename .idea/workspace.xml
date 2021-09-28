@@ -2,32 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7c9317-de95-463a-b295-a3b9495b2433" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AutomatedTestPlatform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutomatedTestPlatform.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-16-36-21_100_HTTP请求.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-16-39-11-22-2222.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-16-42-38-59-20210517PCMS.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-16-04-32-20210517PCMS.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-16-45-57-HTTP请求.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-04-56-2222.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-14-65-2222.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-34-13-2222.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-17-49-53-2222.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-09-17-18-29-74-20210517PCMS.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-15-13-30-46-32-test.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-30-14-36-06-16-RO_v1.0.9新增接口 20210629.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-06-30-14-40-20-6-RO_v1.0.9新增接口20210629.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-11-17-03-25-84-730压测汇总.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-11-17-08-03-19-可视化登录.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-13-18-44-06-92-730压测汇总.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmeter_script/2021-08-17-16-34-12-1-可视化登录.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/release_log/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/release_log/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/20210517PCMS cms账号管理.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/2222.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/HTTP请求.jmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/my.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_page_element/ui_page_element_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_page_element/ui_page_element_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_automation/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_automation/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_test_case_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_case/ui_test_case_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/run_task.py" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/run_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/test_data_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/automated_main/view/ui_automation/ui_test_task/extend/test_data_list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_log/all.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +190,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -227,7 +211,7 @@
       <recent name="D:\AutomatedTestPlatform\interface_main\models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_task">
+  <component name="RunManager" selected="Django Server.AutomatedTestPlatform">
     <configuration name="api_test_case_view" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AutomatedTestPlatform" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -324,16 +308,16 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="AutomatedTestPlatform.settings" />
       </envs>
-      <option name="SDK_HOME" value="D:\AutomatedTestPlatform\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://0.0.0.0:8000/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -436,7 +420,7 @@
       <workItem from="1620283239455" duration="5188000" />
       <workItem from="1620443327002" duration="8960000" />
       <workItem from="1620617762501" duration="42508000" />
-      <workItem from="1632636157391" duration="448000" />
+      <workItem from="1632636157391" duration="19741000" />
     </task>
     <servers />
   </component>
@@ -549,17 +533,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/automated_main/view/ui_automation/ui_page_element/ui_page_element_view.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/automated_main/migrations/0002_auto_20210428_1039.py" />

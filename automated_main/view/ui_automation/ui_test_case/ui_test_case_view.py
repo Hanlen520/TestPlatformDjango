@@ -246,8 +246,8 @@ class UiTestCaseDeBug(View):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('headless')
         chrome_options.add_argument('no-sandbox')
-        driver = webdriver.Chrome(options=chrome_options)
-        # driver = webdriver.Chrome()
+        # driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome()
         bases = base.BaseCommon(driver)
 
         for i in ui_case_data["ui_test_case_data"]:
@@ -264,9 +264,12 @@ class UiTestCaseDeBug(View):
                 pass
             elements_operation = UIElementsOperation.objects.get(id=elements_operation_id)
             page_element = UIPageElement.objects.get(id=ui_elements_id)
-            print(len(page_element.ui_page_element_more))
-            # if len(page_element.ui_page_element_more) == 0:
-            #     print("zheshikong ")
+            print(type(page_element.ui_page_element_more))
+            element_more = None
+            if page_element.ui_page_element_more == "" or page_element.ui_page_element_more is None:
+                element_more = None
+            else:
+                element_more = int(page_element.ui_page_element_more)
 
             try:
                 if elements_operation.elements_operation_name == "open_url":
@@ -277,18 +280,18 @@ class UiTestCaseDeBug(View):
 
                 if elements_operation.elements_operation_name == "send_keys":
                     bases.send_keys(page_element.ui_element_positioning.locating_method, page_element.ui_page_element,
-                                    page_elements_output, int(page_element.ui_page_element_more))
+                                    page_elements_output, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("元素输入操作：" + str(page_element.ui_page_element_name))
 
                 if elements_operation.elements_operation_name == "click":
-                    bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element, int(page_element.ui_page_element_more))
+                    bases.click(page_element.ui_element_positioning.locating_method, page_element.ui_page_element, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("元素点击操作：" + str(page_element.ui_page_element_name))
 
                 if elements_operation.elements_operation_name == "double_click":
                     bases.double_click(page_element.ui_element_positioning.locating_method,
-                                       page_element.ui_page_element)
+                                       page_element.ui_page_element, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("元素双击操作：" + str(page_element.ui_page_element_name))
 
@@ -305,7 +308,7 @@ class UiTestCaseDeBug(View):
 
                 if elements_operation.elements_operation_name == "click_and_hold":
                     bases.click_and_hold(page_element.ui_element_positioning.locating_method,
-                                         page_element.ui_page_element)
+                                         page_element.ui_page_element, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("鼠标长按左键：" + str(page_element.ui_page_element_name))
 
@@ -321,19 +324,19 @@ class UiTestCaseDeBug(View):
 
                 if elements_operation.elements_operation_name == "drag_and_drop":
                     bases.drag_and_drop(page_element.ui_element_positioning.locating_method,
-                                        page_element.ui_page_element, x_coordinates, y_coordinates)
+                                        page_element.ui_page_element, x_coordinates, y_coordinates, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("拖拽元素:" + str(page_element.ui_page_element_name))
 
                 if elements_operation.elements_operation_name == "script":
                     bases.script(page_element.ui_element_positioning.locating_method, page_element.ui_page_element,
-                                 x_coordinates, y_coordinates)
+                                 x_coordinates, y_coordinates, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("滑动滚动条:" + str(page_element.ui_page_element_name))
 
                 if elements_operation.elements_operation_name == "mouse_suspension":
                     bases.mouse_suspension(page_element.ui_element_positioning.locating_method,
-                                           page_element.ui_page_element)
+                                           page_element.ui_page_element, element_more)
                     time.sleep(int(waiting_time))
                     logger.info("鼠标悬浮:" + str(page_element.ui_page_element_name))
 

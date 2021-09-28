@@ -65,11 +65,10 @@ class BaseCommon(object):
     """
 
     def send_keys(self, by, webElement, keys, webElements=None):
-
         if webElements is None:
             self.element(by, webElement).send_keys(keys)
         else:
-            self.elements(by, webElement)[int(webElements)].send_keys(keys)
+            self.elements(by, webElement)[webElements].send_keys(keys)
 
     """
     send_key输入,可上传图片
@@ -79,7 +78,7 @@ class BaseCommon(object):
         if webElements is None:
             self.element(by, webElement).send_keys(keys)
         else:
-            self.elements(by, webElement)[int(webElements)].send_keys(keys)
+            self.elements(by, webElement)[webElements].send_keys(keys)
 
     """
     重写switch_frame方法
@@ -140,7 +139,7 @@ class BaseCommon(object):
         if webElements is None:
             return self.element(by, element).click()
         else:
-            return self.elements(by, element)[int(webElements)].click()
+            return self.elements(by, element)[webElements].click()
 
     """
     双击
@@ -151,7 +150,7 @@ class BaseCommon(object):
         if webElements is None:
             return self.element(by, element).double_click()
         else:
-            return self.elements(by, element)[int(webElements)].double_click()
+            return self.elements(by, element)[webElements].double_click()
 
     """
     鼠标长按左键
@@ -161,7 +160,7 @@ class BaseCommon(object):
         if webElements is None:
             return self.element(by, element).click_and_hold()
         else:
-            return self.elements(by, element)[int(webElements)].click_and_hold()
+            return self.elements(by, element)[webElements].click_and_hold()
 
     """
     selenium 获取网页Title
@@ -208,7 +207,7 @@ class BaseCommon(object):
         else:
             try:
                 action = ActionChains(self.driver)
-                dragger = self.elements(by, element)[int(webElements)]
+                dragger = self.elements(by, element)[webElements]
                 action.drag_and_drop_by_offset(dragger, x, y).perform()
             except Exception:
                 self.logs.error("拖拽元素失败" + element)
@@ -239,7 +238,7 @@ class BaseCommon(object):
         else:
 
             try:
-                button = self.elements(by, button)[int(webElements)]
+                button = self.elements(by, button)[webElements]
                 action = ActionChains(self.driver)
                 action.click_and_hold(button).perform()
                 action.reset_actions()
@@ -270,7 +269,7 @@ class BaseCommon(object):
                 self.logs.error("鼠标悬浮失败" + element)
         else:
             try:
-                mouse = self.element(by, element)[int(webElements)]
+                mouse = self.element(by, element)[webElements]
                 ActionChains(self.driver).move_to_element(mouse).perform()
             except Exception:
                 self.logs.error("鼠标悬浮失败" + element)
@@ -397,8 +396,7 @@ class BaseCommon(object):
         if by == "id":
             # noinspection PyBroadException
             try:
-                element = WebDriverWait(self.driver, seconds, 1).until(
-                    EC.presence_of_all_elements_located((By.by, value)))
+                element = WebDriverWait(self.driver, seconds, 1).until(EC.presence_of_all_elements_located((By.ID, value)))
                 return element
             except Exception:
                 self.logs.error("未找到元素" + value)

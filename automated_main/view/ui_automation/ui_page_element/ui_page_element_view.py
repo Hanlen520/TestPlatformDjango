@@ -137,7 +137,6 @@ class UIPageElementView(View):
                 ui_page_element = (i['ui_page_element'].replace('"', "'"))
                 ui_page_element_name = i['ui_page_element_name']
                 ui_page_element_more = i['ui_page_element_more']
-                print(ui_page_element)
                 UIPageElement.objects.create(ui_project_id=data['ui_project_id'], ui_page_id=data['ui_page_id'],
                                              ui_page_element_name=ui_page_element_name, ui_page_element=ui_page_element,
                                              ui_element_positioning_id=ui_element_positioning_id, ui_page_element_more=ui_page_element_more)
