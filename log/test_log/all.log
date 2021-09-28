@@ -497,3 +497,89 @@
  [INFO] 2021-09-27 18:57:11,066 [Thread-1:14236] [django.server:157] [basehttp:log_message] - "POST /api/backend/ui_test_task/check_result/156/ HTTP/1.1" 200 211
  [INFO] 2021-09-27 18:57:12,837 [Thread-1:14236] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_test_task/check_result/ui_test_abnormal/1534/ HTTP/1.1" 200 89
  [INFO] 2021-09-27 18:57:16,020 [Thread-1:14236] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_test_task/check_result/ui_test_web_script/156/ HTTP/1.1" 200 180
+ [INFO] 2021-09-28 13:21:59,640 [Thread-6:11152] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_project/list/ HTTP/1.1" 200 2374
+ [INFO] 2021-09-28 13:22:00,168 [Thread-6:11152] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_project/list/ HTTP/1.1" 200 2374
+ [INFO] 2021-09-28 13:22:01,757 [Thread-6:11152] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/ui_project_page/1/ HTTP/1.1" 200 2091
+ [INFO] 2021-09-28 13:22:03,217 [Thread-7:27880] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_positioning/list/ HTTP/1.1" 200 2419
+ [INFO] 2021-09-28 13:22:03,223 [Thread-6:11152] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/1/ HTTP/1.1" 200 1256
+ [INFO] 2021-09-28 13:22:03,230 [Thread-8:29512] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/get_ui_page_select_data/ HTTP/1.1" 200 3571
+ [INFO] 2021-09-28 13:22:29,633 [Thread-8:29512] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_project/list/ HTTP/1.1" 200 2374
+ [INFO] 2021-09-28 13:22:30,676 [Thread-8:29512] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_test_task/list/1/ HTTP/1.1" 200 2269
+ [INFO] 2021-09-28 13:22:32,304 [Thread-8:29512] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_test_task/check_result_list/10/ HTTP/1.1" 200 1364
+ [INFO] 2021-09-28 13:22:35,046 [Thread-9:8692] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/ui_test_task/check_result_list/10/91/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:22:35,129 [Thread-8:29512] [django.server:157] [basehttp:log_message] - "DELETE /api/backend/ui_test_task/check_result_list/10/91/ HTTP/1.1" 200 117
+ [INFO] 2021-09-28 13:22:35,144 [Thread-8:29512] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_test_task/check_result_list/10/ HTTP/1.1" 200 1094
+ [INFO] 2021-09-28 13:48:12,084 [Thread-10:25416] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/ui_test_task/check_result/47/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:48:12,092 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "POST /api/backend/ui_test_task/check_result/47/ HTTP/1.1" 200 220
+ [INFO] 2021-09-28 13:48:15,866 [Thread-10:25416] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/ui_test_task/check_result/64/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:48:15,894 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "POST /api/backend/ui_test_task/check_result/64/ HTTP/1.1" 200 221
+ [INFO] 2021-09-28 13:48:18,570 [Thread-10:25416] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/ui_test_task/check_result/63/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:48:18,576 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "POST /api/backend/ui_test_task/check_result/63/ HTTP/1.1" 200 221
+ [INFO] 2021-09-28 13:49:15,314 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_project/list/ HTTP/1.1" 200 2374
+ [INFO] 2021-09-28 13:49:16,695 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/ui_project_page/1/ HTTP/1.1" 200 2091
+ [INFO] 2021-09-28 13:49:20,949 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_positioning/list/ HTTP/1.1" 200 2419
+ [INFO] 2021-09-28 13:49:20,956 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/38/ HTTP/1.1" 200 287
+ [INFO] 2021-09-28 13:49:20,965 [Thread-13:31308] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/get_ui_page_select_data/ HTTP/1.1" 200 3571
+ [INFO] 2021-09-28 13:49:24,630 [Thread-11:24764] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_positioning/list/ HTTP/1.1" 200 2419
+ [INFO] 2021-09-28 13:49:24,642 [Thread-13:31308] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/1/ HTTP/1.1" 200 1256
+ [INFO] 2021-09-28 13:49:24,645 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_page_element/get_ui_page_select_data/ HTTP/1.1" 200 3571
+ [INFO] 2021-09-28 13:53:32,282 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "POST /api/backend/ui_test_task/check_result/47/ HTTP/1.1" 200 220
+ [INFO] 2021-09-28 13:54:07,357 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_positioning/list/ HTTP/1.1" 200 2419
+ [INFO] 2021-09-28 13:54:48,116 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_element_operation/list/ HTTP/1.1" 200 4593
+ [INFO] 2021-09-28 13:56:19,514 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_test_task/list/1/ HTTP/1.1" 200 2269
+ [INFO] 2021-09-28 13:56:56,299 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/ui_project/list/ HTTP/1.1" 200 2374
+ [INFO] 2021-09-28 13:57:23,095 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/list/ HTTP/1.1" 200 1963
+ [INFO] 2021-09-28 13:57:25,570 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/api_module/4/ HTTP/1.1" 200 1033
+ [INFO] 2021-09-28 13:57:29,096 [Thread-14:29668] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/api_test_case/list/10/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:57:29,124 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "POST /api/backend/api_test_case/list/10/ HTTP/1.1" 200 67
+ [INFO] 2021-09-28 13:57:30,321 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/api_module/4/ HTTP/1.1" 200 1033
+ [INFO] 2021-09-28 13:57:30,737 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/list/ HTTP/1.1" 200 1963
+ [INFO] 2021-09-28 13:57:32,126 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/api_module/3/ HTTP/1.1" 200 10571
+ [INFO] 2021-09-28 13:57:33,447 [Thread-14:29668] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/api_test_case/list/27/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:57:33,476 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "POST /api/backend/api_test_case/list/27/ HTTP/1.1" 200 2882
+ [INFO] 2021-09-28 13:57:35,831 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/api_module/3/ HTTP/1.1" 200 10571
+ [INFO] 2021-09-28 13:57:37,694 [Thread-14:29668] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/api_test_case/list/70/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:57:37,715 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "POST /api/backend/api_test_case/list/70/ HTTP/1.1" 200 1308
+ [INFO] 2021-09-28 13:57:39,300 [Thread-12:23668] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_environment/list/ HTTP/1.1" 200 762
+ [INFO] 2021-09-28 13:57:39,367 [Thread-15:28780] [django:169] [api_test_case_view:get] - [{'api_variable_results': '', 'api_value_variable': '', 'api_key_variable': ''}]
+ [INFO] 2021-09-28 13:57:39,367 [Thread-15:28780] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_case/515/ HTTP/1.1" 200 916
+ [INFO] 2021-09-28 13:59:05,835 [Thread-14:29668] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/api_test_case/debug/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 13:59:05,857 [Thread-15:28780] [django:213] [api_test_case_view:post] - https://pre-api.raykite.com/res/raykite-resource/environment
+ [INFO] 2021-09-28 13:59:05,857 [Thread-15:28780] [django:235] [api_test_case_view:post] - {"Content-Type": "application/json"}
+ [INFO] 2021-09-28 13:59:05,886 [Thread-15:28780] [django:250] [api_test_case_view:post] - {
+  "backgroundName": "lalala",
+  "backgroundIosUrl": "www.baidu.com",
+  "backgroundWebUrl": "www.baidu.com",
+  "thumbnail": "www.baidu.com",
+  "iosThumbnail": "www.baidu.com",
+  "preview": "www.baidu.com",
+  "environmentWebFileName": "lalala",
+  "createBy": "9583f17d9b3d49e8b57e25bf2bfc46a3"
+}
+ [INFO] 2021-09-28 13:59:07,110 [Thread-15:28780] [django:312] [api_test_case_view:post] - {"code":"0","msg":"OK","data":{"backgroundId":"4fcfbf78ed5046c3b076b9efde55d281envi"}}
+ [INFO] 2021-09-28 13:59:07,110 [Thread-15:28780] [django.server:157] [basehttp:log_message] - "POST /api/backend/api_test_case/debug/ HTTP/1.1" 200 975
+ [INFO] 2021-09-28 14:03:54,882 [Thread-15:28780] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/list/ HTTP/1.1" 200 1963
+ [INFO] 2021-09-28 14:03:56,078 [Thread-15:28780] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_business_test/list/3/ HTTP/1.1" 200 9161
+ [INFO] 2021-09-28 14:03:58,934 [Thread-15:28780] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_business_test/14/ HTTP/1.1" 200 1050
+ [INFO] 2021-09-28 14:03:58,969 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_business_test/get_api_test_business_test_select_data/3/ HTTP/1.1" 200 38539
+ [INFO] 2021-09-28 14:03:59,048 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_business_test/get_api_test_business_test_select_data/3/ HTTP/1.1" 200 38539
+ [INFO] 2021-09-28 14:05:38,696 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_project/list/ HTTP/1.1" 200 1963
+ [INFO] 2021-09-28 14:05:40,356 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/list/4/ HTTP/1.1" 200 324
+ [INFO] 2021-09-28 14:05:42,065 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/check_result_list/63/ HTTP/1.1" 200 282
+ [INFO] 2021-09-28 14:05:43,751 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/check_result/165/10/1/ HTTP/1.1" 200 1529
+ [INFO] 2021-09-28 14:05:46,131 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/check_result_list/63/ HTTP/1.1" 200 282
+ [INFO] 2021-09-28 14:05:46,805 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/list/4/ HTTP/1.1" 200 324
+ [INFO] 2021-09-28 14:05:48,863 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/list/3/ HTTP/1.1" 200 12913
+ [INFO] 2021-09-28 14:05:51,309 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/check_result_list/6/ HTTP/1.1" 200 283
+ [INFO] 2021-09-28 14:05:52,929 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/api_test_task/check_result/59/10/1/ HTTP/1.1" 200 530865
+ [INFO] 2021-09-28 14:07:04,106 [Thread-17:26172] [django.server:157] [basehttp:log_message] - "OPTIONS /api/backend/api_test_task/single_check_result/659/ HTTP/1.1" 200 0
+ [INFO] 2021-09-28 14:07:04,133 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "POST /api/backend/api_test_task/single_check_result/659/ HTTP/1.1" 200 1703
+ [INFO] 2021-09-28 14:08:37,681 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_list/ HTTP/1.1" 200 409
+ [INFO] 2021-09-28 14:08:38,652 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_list/ HTTP/1.1" 200 409
+ [INFO] 2021-09-28 14:08:40,485 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_script/1/ HTTP/1.1" 200 409
+ [INFO] 2021-09-28 14:08:46,023 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_list/ HTTP/1.1" 200 409
+ [INFO] 2021-09-28 14:08:58,502 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_script/1/ HTTP/1.1" 200 409
+ [INFO] 2021-09-28 14:09:42,035 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_script_report/2/ HTTP/1.1" 200 67
+ [INFO] 2021-09-28 14:09:43,646 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_script/1/ HTTP/1.1" 200 409
+ [INFO] 2021-09-28 14:09:48,573 [Thread-16:21888] [django:41] [performance_script_view:get] - 测试脚本jmeter
+ [INFO] 2021-09-28 14:09:48,574 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_script/2/ HTTP/1.1" 200 314
