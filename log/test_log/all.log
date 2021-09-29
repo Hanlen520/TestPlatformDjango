@@ -583,3 +583,6 @@
  [INFO] 2021-09-28 14:09:43,646 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_project_script/1/ HTTP/1.1" 200 409
  [INFO] 2021-09-28 14:09:48,573 [Thread-16:21888] [django:41] [performance_script_view:get] - 测试脚本jmeter
  [INFO] 2021-09-28 14:09:48,574 [Thread-16:21888] [django.server:157] [basehttp:log_message] - "GET /api/backend/performance_test/performance_script/2/ HTTP/1.1" 200 314
+ [INFO] 2021-09-29 10:06:35,921 [MainThread:10260] [django.utils.autoreload:613] [autoreload:run_with_reloader] - Watching for file changes with StatReloader
+ [INFO] 2021-09-29 10:06:36,014 [django-main-thread:19904] [django:10] [log:<module>] - ces
+ [INFO] 2021-09-29 10:06:36,095 [django-main-thread:19904] [django:22] [task_thread:<module>] - 运行文件的目录--->D:/Django/TestPlatformDjango/automated_main/view/ui_automation/ui_test_task/extend/

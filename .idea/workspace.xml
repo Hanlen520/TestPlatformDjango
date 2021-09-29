@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7c9317-de95-463a-b295-a3b9495b2433" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/img/img12.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/test_log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_log/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,20 +185,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Django\TestPlatformDjango\img" />
       <recent name="D:\RayDataTestPlaformDjango\venv\Scripts" />
       <recent name="D:\RayDataTestPlaformDjango\automated_main\view\api_automation\api_test_task" />
       <recent name="D:\RayDataTestPlaformDjango\automated_main\view\api_automation\api_project" />
       <recent name="D:\AutomatedTestPlatform\automated_main\view\ui_automation\ui_test_task" />
-      <recent name="D:\AutomatedTestPlatform\automated_main\view\ui_automation\ui_test_case" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Django\TestPlatformDjango\img" />
@@ -416,7 +419,11 @@
       <workItem from="1620283239455" duration="5188000" />
       <workItem from="1620443327002" duration="8960000" />
       <workItem from="1620617762501" duration="42508000" />
-      <workItem from="1632636157391" duration="23917000" />
+      <workItem from="1632636157391" duration="24599000" />
+      <workItem from="1632881143968" duration="2676000" />
+      <workItem from="1632884420278" duration="252000" />
+      <workItem from="1632884684398" duration="82000" />
+      <workItem from="1632884776318" duration="108000" />
     </task>
     <servers />
   </component>
@@ -529,6 +536,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/automated_main/migrations/0002_auto_20210428_1039.py" />
