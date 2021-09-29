@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e7c9317-de95-463a-b295-a3b9495b2433" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/img12.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_log/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_log/all.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,11 +201,11 @@
       <recent name="D:\AutomatedTestPlatform\automated_main\view\ui_automation\ui_test_task" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Django\TestPlatformDjango\img\img13" />
       <recent name="D:\Django\TestPlatformDjango\img" />
+      <recent name="D:\Django\TestPlatformDjango\img13" />
       <recent name="D:\Django\TestPlatformDjango\img5" />
       <recent name="D:\Django\TestPlatformDjango\img4" />
-      <recent name="D:\Django\TestPlatformDjango\img3" />
-      <recent name="D:\Django\TestPlatformDjango\img2" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.AutomatedTestPlatform">
@@ -423,7 +421,7 @@
       <workItem from="1632881143968" duration="2676000" />
       <workItem from="1632884420278" duration="252000" />
       <workItem from="1632884684398" duration="82000" />
-      <workItem from="1632884776318" duration="108000" />
+      <workItem from="1632884776318" duration="3315000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@
 # 启动Django
     python manage.py runserver 0.0.0.0:8081
 #项目介绍
+![img13.png](img/img13.png)
 #首页
 ![img.png](img/img11.png)
 
@@ -57,4 +58,6 @@ API测试报告详情
 
 #微信打赏：
 ![img.png](img/img12.png)
+
+
 
